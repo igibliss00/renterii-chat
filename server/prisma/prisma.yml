@@ -1,0 +1,5 @@
+# endpoint: https://renterii-canada1-4c16643338.herokuapp.com/renterii-canada1/prod?headers={"Authorization":"Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpYXQiOjE1NjE5NTY5MjIsIm5iZiI6MTU2MTk1NjkyMiwiZXhwIjoxNTYyMDQzMzIyfQ.CiS-tPNiTq4ylWTACsWhvwT-06lum9gN-9pVgAn1WQk"}
+endpoint: ${env:PRISMA_ENDPOINT}
+datamodel: datamodel.prisma
+# secret: supersecrettextforprisma
+disableAuth: true

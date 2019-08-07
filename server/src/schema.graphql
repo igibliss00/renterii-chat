@@ -1,0 +1,252 @@
+# import * from './generated/prisma.graphql'
+
+type Query {
+    user(id: ID!): User!
+    users(query: String, first: Int, skip: Int, after: String, orderBy: UserOrderByInput): [User]
+    posts(id: ID, query: String, author: String, first: Int, skip: Int, after: String, orderBy: UserOrderByInput): [Post!]!
+    post(id: ID): Post
+    reviews(query: String, first: Int, skip: Int, after: String, orderBy: UserOrderByInput): [Review!]!
+    bookings(id: ID, query: String, first: Int, skip: Int, after: String, orderBy: UserOrderByInput): [Booking!]!
+    orders(orderBy: OrderOrderByInput): [Order]
+    order(id: ID!): Order
+    cart: [CartItem!]!
+    postsConnection(where: PostWhereInput): PostConnection!
+    me: User!
+    messages(channel: String!, orderBy: MessageOrderByInput, last: Int): [Message]
+    channels: [Channel]
+    locations: Location
+}
+
+type Mutation {
+    createUser(data: CreateUserInput!): AuthPayload!
+    login(data: LoginUserInput!): AuthPayload!
+    googleLogin: AuthPayload!
+    deleteUser: User!
+    updateUser(data: UpdateUserInput): User!
+    createPost(data: CreatePostInput!): Post!
+    updatePost(id: ID!, data: UpdatePostInput!): Post!
+    deletePost(id: ID!): Post!
+    createReview(data: CreateReviewInput!): Review!
+    createOrder(stripeToken: String!): Order!
+    deleteOrder(id: ID!): Order!
+    requestReset(email: String!): SuccessMessage
+    resetPassword(resetToken: String!, password: String!, confirmPassword: String!): ResetPayload!
+    addToCart(data: AddToCartInput!): CartItem
+    removeFromCart(id: ID!): CartItem
+    createMessage(data: MessageInput!): Boolean!
+    createChannel(id: ID!): Channel!
+    createLocation(data: LocationInput!): Boolean!
+    deleteLocation(channel: String!): Boolean!
+    updateOnlineStatus(data: OnlineStatusInput!): User!
+}
+
+type Subscription {
+    newMessage(channel: String!): Message!
+    newChannel: Channel
+    newLocation(channel: String!, isShared: Boolean!): Location
+    onlineStatus: User!
+}
+
+type AuthPayload {
+    token: String!
+    user: User!
+}
+
+type ResetPayload {
+    token: String!
+    user: User!
+    message: String!
+}
+
+type SuccessMessage {
+  message: String
+}
+
+input CreateUserInput {
+    firstName: String!
+    lastName: String!
+    email: String!
+    password: String!
+    permissions: String
+}
+
+input LoginUserInput {
+    email: String!
+    password: String!
+}
+
+input UpdateUserInput {
+    firstName: String
+    lastName: String
+    email: String
+    password: String
+    onlineStatus: String
+}
+
+input CreatePostInput {
+    title: String!
+    body: String!
+    location: String!
+    longitude: Float!
+    latitude: Float!
+    published: Boolean!
+    price: Int!
+    quantity: Int!
+    image: String
+    largeImage: String
+}
+
+input UpdatePostInput {
+    title: String
+    body: String
+    location: String
+    location: String
+    longitude: Float
+    latitude: Float
+    published: Boolean
+    price: Int
+}
+
+input CreateReviewInput {
+    comment: String!
+    post: ID!
+}
+
+input AddToCartInput {
+    id: ID!
+    startDate: String
+    endDate: String
+    duration: Int
+}
+
+input MessageInput {
+    text: String
+    image: String
+    largeImage: String
+    chatterId: String!
+    channel: String!
+    status: Boolean
+    isTyping: Boolean
+    post: String
+}
+
+input LocationInput {
+    longitude: Float!
+    latitude: Float!
+    channel: String!
+    isShared: Boolean!
+}
+
+input OnlineStatusInput {
+    onlineStatus: String!
+}
+
+type User {
+    id: ID!
+    firstName: String!
+    lastName: String!
+    email: String
+    password: String!
+    onlineStatus: String!
+    image: String
+    resetToken: String
+    resetTokenExpiry: Float
+    posts: [Post!]
+    lending: [Booking!]!
+    borrowing: [Booking!]!
+    messages: [Message]
+    channels: [Channel]
+    updatedAt: String!
+    createdAt: String!
+    permissions: String!
+    cart: [CartItem!]!
+    authentication: String!
+}
+
+type Post {
+    id: ID!
+    title: String!
+    body: String!
+    location: String!
+    longitude: Float!
+    latitude: Float!
+    published: Boolean!
+    price: Int!
+    quantity: Int!
+    image: String
+    largeImage: String
+    author: User!
+    booking: [Booking!]
+    reviews: [Review!]!
+}
+
+type Review {
+    id: ID!
+    comment: String!
+    author: String!
+    post: String!
+
+}
+
+type Booking {
+    id: ID! 
+    post: Post!
+    owner: User!
+    renter: [User!]! 
+    price: Int!
+    quantity: Int!
+    startDate: String!
+    endDate: String!
+    overdue: Boolean!
+    returned: Boolean!
+    borrowing: Boolean!
+    inProgress: Boolean!
+}
+
+type CartItem {
+    id: ID! 
+    quantity: Int!
+    startDate: String
+    endDate: String
+    duration: Int
+    post: Post 
+    user: User!
+}
+
+type Message {
+    id: ID!
+    text: String
+    image: String
+    largeImage: String
+    user: User!
+    chatterId: String!
+    channel: String!
+    status: Boolean
+    isTyping: Boolean
+    post: Post
+    createdAt: String
+}
+
+type Channel {
+    id: ID!
+    members: [User!]!
+    text: [Message]
+    location: Location
+    createdAt: String
+    updatedAt: String
+}
+
+type Location {
+  id: ID!
+  user: User!
+  longitude: Float!
+  latitude: Float!
+  channel: Channel!
+  isShared: Boolean!
+}
+
+enum MutationType {
+    CREATED
+    UPDATED
+    DELETED
+}

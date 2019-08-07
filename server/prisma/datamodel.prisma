@@ -1,0 +1,123 @@
+type User {
+  id: ID! @id
+  firstName: String!
+  lastName: String!
+  email: String! @unique
+  password: String!
+  onlineStatus: String! @default(value: "offline")
+  image: String
+  resetToken: String
+  resetTokenExpiry: Float
+  posts: [Post!] @relation(name: "PostToUser", onDelete: CASCADE)
+  reviews: [Review!]! @relation(name: "ReviewToUser", onDelete: SET_NULL)
+  borrowing: [Booking!]! @relation(name: "BorrowerToBooking", onDelete: CASCADE)
+  lending: [Booking!]! @relation(name: "OwnerToBooking", onDelete: CASCADE)
+  cart: [CartItem!]! @relation(name: "CartToUser", onDelete: CASCADE) 
+  messages: [Message] @relation(name: "MessageToUser", onDelete: CASCADE) 
+  channels: [Channel] @relation(name: "ChannelToMembers", onDelete: CASCADE)
+  location: [Location] @relation(name: "LocationToUser", onDelete: CASCADE)  
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+  permissions: String!
+  authentication: String!
+}
+
+type Post {
+    id: ID! @id
+    title: String!
+    body: String!
+    location: String!
+    longitude: Float!
+    latitude: Float!
+    published: Boolean!
+    price: Int!
+    quantity: Int! @default(value: 1)
+    image: String
+    largeImage: String
+    author: User! @relation(name: "PostToUser", onDelete: SET_NULL) 
+    booking: [Booking!]! @relation(name: "PostToBooking", onDelete: CASCADE)
+    reviews: [Review!]! @relation(name: "ReviewToPost", onDelete: CASCADE)
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+}
+
+type Review {
+  id: ID! @id
+  comment: String!
+  author: User! @relation(name: "ReviewToUser", onDelete: SET_NULL)
+  post: Post! @relation(name: "ReviewToPost", onDelete: SET_NULL)
+  createdAt: DateTime @createdAt
+  updatedAt: DateTime @updatedAt
+}
+
+type CartItem {
+    id: ID! @id
+    quantity: Int! @default(value: 1)
+    startDate: DateTime
+    endDate: DateTime
+    duration: Int
+    user: User! @relation(name: "CartToUser", onDelete: SET_NULL)
+    post: Post @relation(name: "CartToPost", onDelete: SET_NULL)
+    createdAt: DateTime! @createdAt
+    updatedAt: DateTime! @updatedAt
+}
+
+type Booking {
+  id: ID! @id
+  post: Post! @relation(name: "PostToBooking", onDelete: SET_NULL)
+  owner: User! @relation(name: "OwnerToBooking", onDelete: SET_NULL)
+  renter: [User!]! @relation(name: "BorrowerToBooking", onDelete: SET_NULL)
+  price: Int!
+  quantity: Int! @default(value: 1)
+  startDate: DateTime!
+  endDate: DateTime!
+  overdue: Boolean!
+  returned: Boolean!
+  borrowing: Boolean!
+  inProgress: Boolean!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Order {
+  id: ID! @id
+  posts: [Booking!]!
+  total: Int!
+  user: User!
+  charge: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt 
+}
+
+type Message {
+  id: ID! @id
+  text: String
+  image: String
+  largeImage: String
+  user: User! @relation(name: "MessageToUser", onDelete: SET_NULL) 
+  chatterId: String!
+  channel: Channel @relation(name: "ChannelToMessage", onDelete: SET_NULL)
+  status: Boolean @default(value: false)
+  isTyping: Boolean @default(value: false)
+  post: Post @relation(onDelete: SET_NULL)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt 
+}
+
+type Channel {
+  id: ID! @id
+  members: [User!]! @relation(name: "ChannelToMembers", onDelete: SET_NULL)
+  text: [Message] @relation(name: "ChannelToMessage", onDelete: CASCADE) 
+  location: [Location] @relation(link: TABLE, onDelete: CASCADE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Location {
+  id: ID! @id
+  user: User! @relation(name: "LocationToUser", onDelete: SET_NULL)
+  longitude: Float!
+  latitude: Float!
+  channel: Channel!
+  isShared: Boolean! @default(value: false)
+}
