@@ -35,3 +35,29 @@ export const LOCAL_LOCATION_ERROR_STATE_QUERY = gql`
     locationError @client
   }
 `
+
+export const GET_CHANNELS_QUERY = gql`
+    query Channels{
+        channels{
+            id
+            members {
+                id
+                firstName
+            }
+            updatedAt
+            text {
+                text
+            }
+        }
+    }
+`
+
+export const GET_MY_INFO_SIMPLE = gql`
+    query {
+        me {
+            id
+            firstName
+            permissions
+        }
+    }
+`

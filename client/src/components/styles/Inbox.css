@@ -1,0 +1,12 @@
+.inbox {
+  max-width: 500px;
+  position: relative;
+  margin: 20px auto; }
+  .inbox h2 {
+    border-bottom: 2px solid red;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem; }
+  .inbox .inbox-list {
+    list-style: none;
+    padding-left: 0; }

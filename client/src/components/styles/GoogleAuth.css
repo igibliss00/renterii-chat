@@ -1,0 +1,19 @@
+.google-auth {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  .google-auth button {
+    width: 500px; }
+    .google-auth button span {
+      margin: 0 auto;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale; }
+
+@media screen and (max-width: 800px) {
+  .google-auth {
+    max-width: calc(100vw - 10%);
+    margin: 20px auto; } }

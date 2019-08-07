@@ -1,0 +1,72 @@
+.form {
+  max-width: 500px;
+  margin: 20px auto;
+  -webkit-box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.02);
+  border: 5px solid white;
+  padding: 20px;
+  font-size: 1.5rem;
+  line-height: .2;
+  font-weight: 600; }
+  .form p {
+    margin-top: 2rem; }
+  .form label {
+    display: block;
+    margin-bottom: 1rem; }
+  .form input,
+  .form textarea,
+  .form select {
+    width: 100%;
+    padding: 0.5rem;
+    font-size: 1rem;
+    border: 1px solid black; }
+    .form input:focus,
+    .form textarea:focus,
+    .form select:focus {
+      outline: 0;
+      border-color: #f85757; }
+  .form button,
+  .form input[type='submit'] {
+    width: auto;
+    background: red;
+    color: white;
+    border: 0;
+    font-size: 2rem;
+    font-weight: 600;
+    padding: 0.5rem 1.2rem;
+    margin-top: 10px;
+    cursor: pointer; }
+    .form button:hover,
+    .form input[type='submit']:hover {
+      background-color: #f85656; }
+  .form fieldset {
+    border: 0;
+    padding: 0; }
+    .form fieldset[disabled] {
+      opacity: 0.5; }
+    .form fieldset::before {
+      height: 10px;
+      content: '';
+      display: block;
+      background-image: -webkit-gradient(linear, left top, right top, from(#ff3019), color-stop(50%, #e2b04a), to(#ff3019));
+      background-image: -webkit-linear-gradient(left, #ff3019 0%, #e2b04a 50%, #ff3019 100%);
+      background-image: -o-linear-gradient(left, #ff3019 0%, #e2b04a 50%, #ff3019 100%);
+      background-image: linear-gradient(to right, #ff3019 0%, #e2b04a 50%, #ff3019 100%); }
+    .form fieldset[aria-busy='true']::before {
+      background-size: 50% auto; }
+  .form .reset {
+    color: #f85757;
+    float: right;
+    margin-top: 10px; }
+    .form .reset:hover {
+      color: #f87878; }
+
+.autocomplete-dropdown-container {
+  line-height: 1.5em; }
+
+@media screen and (max-width: 800px) {
+  .form {
+    max-width: calc(100vw - 10%); }
+    .form h2, .form p {
+      font-size: 1.5rem; } }
