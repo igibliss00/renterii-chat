@@ -1,24 +1,14 @@
 import React, { useState } from 'react'
-<<<<<<< HEAD
 import PropTypes from 'prop-types'
 import { useMutation } from 'react-apollo-hooks'
 
 import '../styles/Form.css'
-=======
-import { useMutation } from 'react-apollo-hooks'
-
-import '../styles/form.css'
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 import { RESET_MUTATION } from '../../graphql/mutation'
 import { GET_MY_INFO_SIMPLE } from '../../graphql/query'
 import Error from '../../util/ErrorMessage'
 import { AUTH_TOKEN, AUTH_ID } from '../../constants';
 
-<<<<<<< HEAD
 const Reset = ({ history }) => {
-=======
-const Reset = props => {
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [message, setMessage] = useState({})
@@ -50,11 +40,7 @@ const Reset = props => {
             await localStorage.setItem(AUTH_TOKEN, resetResult.data.resetPassword.token)
             await localStorage.setItem(AUTH_ID, resetResult.data.resetPassword.user.id)
             setTimeout(() => {
-<<<<<<< HEAD
                 history.push('/')
-=======
-                props.history.push('/')
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
             }, 1500)
         }
     }
@@ -93,11 +79,8 @@ const Reset = props => {
     )
 }
 
-<<<<<<< HEAD
 Reset.propTypes = {
     history: PropTypes.object.isRequired,
 }
 
-=======
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 export default React.memo(Reset)

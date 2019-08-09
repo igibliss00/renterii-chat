@@ -7,7 +7,6 @@ import { GET_CHAT_POSTS } from '../../graphql/query'
 import { CREATE_MESSAGE_MUTATION } from '../../graphql/mutation'
 import Spinner from '../../util/Spinner'
 import '../styles/ChatPosts.css'
-import trimmedString from '../../util/trimmedString'
 
 const TheirChatPosts = ({ author, chatterId, channel }) => {
     const { data: { posts }, error, loading } = useQuery(GET_CHAT_POSTS, {
@@ -39,21 +38,14 @@ const TheirChatPosts = ({ author, chatterId, channel }) => {
             className="items"
             key={post.id}    
         >   
-            <div className="chat-post-content">
-                <div>
-                    <p><b>{post.title}</b></p>
-                    <p>{trimmedString(post.body)}</p>
-                    <p>${post.price}<small>/day</small></p>
-                </div>
-                <div className="chat-post-buttons">
-                    <Link
-                        className="link"
-                        to={`/post/${post.id}`}
-                    >Detail
-                    </Link>
-                    <button onClick={() => onShareHandler(post)}>Share on Chat</button>
-                </div>
-            </div>
+            <Link 
+                className="chat-post-content"
+                to={`/post/${post.id}`}
+            >
+                <p><b>{post.title}</b></p>
+                <p>${post.price}<small>/day</small></p>
+                <button onClick={() => onShareHandler(post)}>Share on Chat</button>
+            </Link>
             <img 
                 src={post.image} 
                 alt={post.body} 
@@ -64,7 +56,7 @@ const TheirChatPosts = ({ author, chatterId, channel }) => {
 
     return (
         <div className="inventory">
-            <h3 className="title">{author.firstName}'s Posts</h3>
+            <h5 className="title">{author.firstName}'s Posts</h5>
             <ul>
                 <li>{list}</li>
             </ul>

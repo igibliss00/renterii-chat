@@ -1,8 +1,4 @@
-<<<<<<< HEAD
 import { SEARCH_POST, BOOKING_ID, SELECT_PIN, SELECT_YOUR_PIN, SELECT_CARD, SELECT_CHANNEL } from '../constants'
-=======
-import { SEARCH_POST, BOOKING_ID, SELECT_PIN, SELECT_YOUR_PIN, SELECT_CARD } from '../constants'
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 
 export default function reducer(state = {}, action: any) {
     switch (action.type) {
@@ -43,7 +39,6 @@ export default function reducer(state = {}, action: any) {
                 selectedCardPin: true,
                 selectedCard
             }
-<<<<<<< HEAD
         case SELECT_CHANNEL: {
             const { channel, members } = action.payload
             return {
@@ -52,8 +47,6 @@ export default function reducer(state = {}, action: any) {
                 members
             }
         }
-=======
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
         default:
             return state
     }

@@ -6,7 +6,6 @@
   -ms-flex-pack: center;
   justify-content: center; }
   .google-auth button {
-<<<<<<< HEAD
     width: 500px;
     height: 30px;
     border-radius: 8px !important;
@@ -17,12 +16,11 @@
       -webkit-transform: translateY(-8px);
       -ms-transform: translateY(-8px);
       transform: translateY(-8px); }
-=======
-    width: 500px; }
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
     .google-auth button span {
       margin: 0 auto;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+ "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+ sans-serif;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale; }
 

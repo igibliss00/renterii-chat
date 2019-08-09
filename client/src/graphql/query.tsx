@@ -305,21 +305,7 @@ export const GET_MESSAGES_QUERY =  gql`
     }
 `
 
-export const GET_CHANNELS_QUERY = gql`
-    query Channels{
-        channels{
-            id
-            members {
-                id
-                firstName
-            }
-            updatedAt
-            text {
-                text
-            }
-        }
-    }
-`
+
 
 export const GET_LOCATION_QUERY = gql`
     query Locations {
@@ -345,7 +331,6 @@ export const LOCAL_LOCATION_ERROR_STATE_QUERY = gql`
   }
 `
 
-<<<<<<< HEAD
 export const GET_CHAT_POSTS = gql`
     query Posts($id: ID, $query: String, $author: String, $skip: Int, $first: Int, $orderBy: UserOrderByInput){
         posts (
@@ -361,7 +346,10 @@ export const GET_CHAT_POSTS = gql`
             body
             price
             image
-=======
+        }
+    }
+`
+
 export const GET_CHANNELS_QUERY = gql`
     query Channels{
         channels{
@@ -374,12 +362,10 @@ export const GET_CHANNELS_QUERY = gql`
             text {
                 text
             }
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
         }
     }
 `
 
-<<<<<<< HEAD
 export const GET_MY_CHAT_POSTS = gql`
     query {
         me {
@@ -399,14 +385,5 @@ export const GET_ONLINE_STATUS_QUERY = gql`
     	user(id: $id){
             onlineStatus
       }
-=======
-export const GET_MY_INFO_SIMPLE = gql`
-    query {
-        me {
-            id
-            firstName
-            permissions
-        }
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
     }
 `

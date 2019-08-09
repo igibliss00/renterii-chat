@@ -6,6 +6,7 @@ import Settings from '@material-ui/icons/Settings'
 import './styles/Menu.css'
 
 const Menu: React.FunctionComponent = () => {
+
     return (
         <ul className="chat-menu">
             <li>

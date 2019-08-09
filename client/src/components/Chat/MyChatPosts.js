@@ -35,21 +35,14 @@ const MyChatPosts = ({ chatterId, channel }) => {
             className="items"
             key={post.id}    
         >   
-            <div className="chat-post-content">
-                <div>
-                    <p><b>{post.title}</b></p>
-                    <p>{trimmedString(post.body)}</p>
-                    <p>${post.price}<small>/day</small></p>
-                </div>
-                <div className="chat-post-buttons">
-                    <Link
-                        className="link"
-                        to={`/post/${post.id}`}
-                    >Detail
-                    </Link>
-                    <button onClick={() => onShareHandler(post)}>Share on Chat</button>
-                </div>
-            </div>
+            <Link 
+                className="chat-post-content"
+                to={`/post/${post.id}`}
+            >
+                <p><b>{post.title}</b></p>
+                <p>${post.price}<small>/day</small></p>
+                <button onClick={() => onShareHandler(post)}>Share on Chat</button>
+            </Link>
             <img 
                 src={post.image} 
                 alt={post.body} 
@@ -59,7 +52,7 @@ const MyChatPosts = ({ chatterId, channel }) => {
     )
     return (
         <div className="inventory">
-            <h3 className="title">My Posts</h3>
+            <h5 className="title">My Posts</h5>
             <ul>
                 <li>{list}</li>
             </ul>

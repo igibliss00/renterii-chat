@@ -3,10 +3,13 @@
 .inventory {
     box-shadow: 1px 1px 1px 1px #D3D3D3;
     max-width: $maxWidth;
-    max-height: 500px;
+    max-height: 200px;
     overflow: auto;
+    scrollbar-width: thin;
+    border-radius: 5px;
     .title {
         text-align: center;
+        line-height: 5px;
     }
     ul {
         list-style: none;
@@ -14,40 +17,33 @@
     }
     .items {
         border: 1px solid lightgray;
+        border-radius: 10px;
+        margin: 10px auto;
         display: flex;
         justify-content: space-between;
-        padding-left: 10px;
+        font-size: 10px;
+        text-align: center;
+        color: rgba(128, 128, 128, 0.616);
         .chat-post-content {
             line-height: 10px;
-            .chat-post-buttons {
-                button {
-                    text-align: center;
-                    border: 1px solid grey;
-                    line-height: 1.5em;
-                    border-radius: 2px;
-                    background: white;
-                    padding: 10px;
-                    margin: 5px;
-                    -webkit-transition-duration: 0.4s; /* Safari */
-                    transition-duration: 0.4s;
-                    margin-bottom: 10px;
-                    &:hover {
-                        cursor: pointer;
-                    }
-                }
-                .link {
-                    text-align: center;
-                    border: 1px solid grey;
-                    line-height: 1.5em;
-                    border-radius: 2px;
-                    background: white;
-                    padding: 10px;
-                    margin: 5px;
-                    -webkit-transition-duration: 0.4s; /* Safari */
-                    transition-duration: 0.4s;
-                    &:hover {
-                        cursor: pointer;
-                    }
+            padding-left: 5px;
+            button {
+                font-size: 10px;
+                height: 40px;
+                text-align: center;
+                border: 1px solid grey;
+                line-height: 1.5em;
+                border-radius: 8px;
+                background: white;
+                padding: 8px;
+                margin: 5px;
+                -webkit-transition-duration: 0.4s; /* Safari */
+                transition-duration: 0.4s;
+                margin-bottom: 10px;
+                &:hover {
+                    cursor: pointer;
+                    background: rgba(0, 0, 0, 0.692);
+                    color: white;
                 }
             }
         }

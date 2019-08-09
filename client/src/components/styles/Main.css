@@ -1,5 +1,5 @@
 .main {
-  background: rgba(248, 87, 87, 0.178);
+  background-image: url(../../media/background.jpg);
   width: 100vw;
   height: 100vh; }
   .main .container {

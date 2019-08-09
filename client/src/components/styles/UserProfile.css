@@ -31,3 +31,25 @@
       padding: 5px 10px;
       border-radius: 10px;
       font-weight: bold; }
+    .user-profile-detail .chat-lower-profile li:last-of-type {
+      border: none; }
+      .user-profile-detail .chat-lower-profile li:last-of-type button {
+        border: 1px solid rgba(128, 128, 128, 0.418);
+        line-height: 2em;
+        color: rgba(128, 128, 128, 0.801);
+        border-radius: 20px;
+        background: white;
+        padding: 5px 15px;
+        margin: 0px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        -o-transition-duration: 0.4s;
+        transition-duration: 0.4s; }
+        .user-profile-detail .chat-lower-profile li:last-of-type button p {
+          font-size: 15px;
+          font-weight: bold;
+          line-height: 0px; }
+        .user-profile-detail .chat-lower-profile li:last-of-type button:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.692);
+          color: white; }

@@ -2,53 +2,51 @@
   -webkit-box-shadow: 1px 1px 1px 1px #D3D3D3;
   box-shadow: 1px 1px 1px 1px #D3D3D3;
   max-width: 500px;
-  max-height: 500px;
-  overflow: auto; }
+  max-height: 200px;
+  overflow: auto;
+  scrollbar-width: thin;
+  border-radius: 5px; }
   .inventory .title {
-    text-align: center; }
+    text-align: center;
+    line-height: 5px; }
   .inventory ul {
     list-style: none;
     padding: 0 10px; }
   .inventory .items {
     border: 1px solid lightgray;
+    border-radius: 10px;
+    margin: 10px auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    padding-left: 10px; }
+    font-size: 10px;
+    text-align: center;
+    color: rgba(128, 128, 128, 0.616); }
     .inventory .items .chat-post-content {
-      line-height: 10px; }
-      .inventory .items .chat-post-content .chat-post-buttons button {
+      line-height: 10px;
+      padding-left: 5px; }
+      .inventory .items .chat-post-content button {
+        font-size: 10px;
+        height: 40px;
         text-align: center;
         border: 1px solid grey;
         line-height: 1.5em;
-        border-radius: 2px;
+        border-radius: 8px;
         background: white;
-        padding: 10px;
+        padding: 8px;
         margin: 5px;
         -webkit-transition-duration: 0.4s;
         /* Safari */
         -o-transition-duration: 0.4s;
         transition-duration: 0.4s;
         margin-bottom: 10px; }
-        .inventory .items .chat-post-content .chat-post-buttons button:hover {
-          cursor: pointer; }
-      .inventory .items .chat-post-content .chat-post-buttons .link {
-        text-align: center;
-        border: 1px solid grey;
-        line-height: 1.5em;
-        border-radius: 2px;
-        background: white;
-        padding: 10px;
-        margin: 5px;
-        -webkit-transition-duration: 0.4s;
-        /* Safari */
-        -o-transition-duration: 0.4s;
-        transition-duration: 0.4s; }
-        .inventory .items .chat-post-content .chat-post-buttons .link:hover {
-          cursor: pointer; }
+        .inventory .items .chat-post-content button:hover {
+          cursor: pointer;
+          background: rgba(0, 0, 0, 0.692);
+          color: white; }
     .inventory .items .items-pic {
       width: 100px;
       max-height: 150px;

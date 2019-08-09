@@ -13,8 +13,6 @@ import LocationWarningModal from './LocationWarningModal'
 import ChatMapContainer from './ChatMapContainer'
 import { AUTH_ID } from '../../constants'
 import TypeIndicator from './TypeIndicator'
-import MyChatPosts from './MyChatPosts'
-import TheirChatPosts from './TheirChatPosts'
 import Message from './Message'
 
 class SubChat extends PureComponent {
@@ -25,8 +23,6 @@ class SubChat extends PureComponent {
         largeImage: '',
         chatterId: '',
         keycode: 13,
-        myPosts: false,
-        theirPosts: false,
     }
 
     componentWillMount() {
@@ -207,10 +203,7 @@ class SubChat extends PureComponent {
                             />
                         </div>
                     </div>
-                    <div className="right-panel">
-                        <button onClick={() => this.setState({ myPosts: !this.state.myPosts, theirPosts: false })}>My Posts</button>
-                        <button onClick={() => this.setState({ theirPosts: !this.state.theirPosts, myPosts: false })}>{chatUsername[0].firstName}'s Posts</button>
-                    </div>
+ 
                 </div>
                 {mapOpen && <ChatMapContainer channel={this.props.channel} />} 
                 <TypeIndicator 
@@ -219,19 +212,6 @@ class SubChat extends PureComponent {
                     channel={channel}
                     chatterId={this.state.chatterId}
                 />
-                {this.state.myPosts && 
-                    <MyChatPosts 
-                        channel={channel}
-                        chatterId={this.state.chatterId} 
-                    />
-                }
-                {this.state.theirPosts && 
-                    <TheirChatPosts 
-                        author={chatUsername[0]} 
-                        channel={channel}
-                        chatterId={this.state.chatterId} 
-                    />
-                }
             </div>
             )
         }
