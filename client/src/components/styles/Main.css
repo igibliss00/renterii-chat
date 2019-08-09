@@ -1,0 +1,43 @@
+.main {
+  background: rgba(248, 87, 87, 0.178);
+  width: 100vw;
+  height: 100vh; }
+  .main .container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding: 30px;
+    height: 100%;
+    width: 100%; }
+    .main .container .menu {
+      width: 15%;
+      height: 100%;
+      background: white;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px; }
+    .main .container .chat-inbox {
+      width: 25%;
+      height: 100%;
+      background: white;
+      margin: 10px;
+      padding: 10px;
+      border-radius: 10px; }
+    .main .container .main-chat {
+      width: 40%;
+      height: 100%;
+      background: white;
+      margin: 10px 0px 10px 10px;
+      padding: 10px;
+      border-radius: 10px 0px 0px 10px; }
+    .main .container .user-profile {
+      width: 20%;
+      height: 100%;
+      background: white;
+      margin: 10px 10px 10px 1px;
+      padding: 10px;
+      border-radius: 0px 10px 10px 0px; }

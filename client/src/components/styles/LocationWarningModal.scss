@@ -1,0 +1,50 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+
+.location-share-modal {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    right : auto;
+    bottom: auto;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    grid-gap: 5px;
+    background: white;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 10px; 
+    padding: 30px;
+    .modal-close-btn {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+        color: grey;
+        &:hover {
+            color: black;
+            cursor: pointer;
+        }
+    }
+    .modal-buttons {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+    .check-circle {
+        color: rgba(0, 0, 255, 0.63);
+        font-size: 4em;
+        cursor: pointer;
+    }
+    .cancel {
+        color: $red;
+        font-size: 4em;
+        cursor: pointer;
+    }
+}
+
+
+@include mQ(530px) {
+    .modal-close-btn {
+        margin-right: 20%;
+    }
+}

@@ -1,0 +1,20 @@
+.shared-card {
+  width: 100%;
+  text-align: center;
+  border: 1px solid lightgrey;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between; }
+  .shared-card .shared-card-info {
+    padding: 15px;
+    line-height: 1em; }
+  .shared-card img {
+    width: 50%;
+    outline: none; }

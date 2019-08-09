@@ -1,0 +1,74 @@
+.inventory {
+  -webkit-box-shadow: 1px 1px 1px 1px #D3D3D3;
+  box-shadow: 1px 1px 1px 1px #D3D3D3;
+  max-width: 500px;
+  max-height: 500px;
+  overflow: auto; }
+  .inventory .title {
+    text-align: center; }
+  .inventory ul {
+    list-style: none;
+    padding: 0 10px; }
+  .inventory .items {
+    border: 1px solid lightgray;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    padding-left: 10px; }
+    .inventory .items .chat-post-content {
+      line-height: 10px; }
+      .inventory .items .chat-post-content .chat-post-buttons button {
+        text-align: center;
+        border: 1px solid grey;
+        line-height: 1.5em;
+        border-radius: 2px;
+        background: white;
+        padding: 10px;
+        margin: 5px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        -o-transition-duration: 0.4s;
+        transition-duration: 0.4s;
+        margin-bottom: 10px; }
+        .inventory .items .chat-post-content .chat-post-buttons button:hover {
+          cursor: pointer; }
+      .inventory .items .chat-post-content .chat-post-buttons .link {
+        text-align: center;
+        border: 1px solid grey;
+        line-height: 1.5em;
+        border-radius: 2px;
+        background: white;
+        padding: 10px;
+        margin: 5px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        -o-transition-duration: 0.4s;
+        transition-duration: 0.4s; }
+        .inventory .items .chat-post-content .chat-post-buttons .link:hover {
+          cursor: pointer; }
+    .inventory .items .items-pic {
+      width: 100px;
+      max-height: 150px;
+      -o-object-fit: cover;
+      object-fit: cover; }
+  @media (max-width: 350px) {
+    .inventory .items .chat-post-content {
+      font-size: 13px; }
+      .inventory .items .chat-post-content .chat-post-buttons {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column; }
+        .inventory .items .chat-post-content .chat-post-buttons button, .inventory .items .chat-post-content .chat-post-buttons .link {
+          width: 100px;
+          height: 50px;
+          line-height: 0px; }
+    .inventory .items .items-pic {
+      width: 50%;
+      max-height: 100%; } }

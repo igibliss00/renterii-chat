@@ -1,0 +1,191 @@
+.chat-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  margin: auto; }
+  .chat-wrapper .back-arrow {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    direction: row; }
+    .chat-wrapper .back-arrow p {
+      line-height: 0px;
+      font-size: 13px; }
+    .chat-wrapper .back-arrow:hover {
+      font-weight: bold; }
+  .chat-wrapper h3 {
+    text-align: center; }
+  .chat-wrapper .chat {
+    padding: 0 2rem 2rem 2rem;
+    height: 400px;
+    width: 100%;
+    overflow: auto;
+    color: black;
+    position: relative;
+    scrollbar-width: none; }
+    .chat-wrapper .chat::-webkit-scrollbar {
+      width: 0px; }
+    .chat-wrapper .chat::-webkit-scrollbar-track {
+      width: 0px; }
+    .chat-wrapper .chat::-webkit-scrollbar-thumb {
+      width: 0px; }
+    .chat-wrapper .chat .onlineStatus {
+      position: -webkit-sticky;
+      position: sticky;
+      left: 0;
+      top: 10px;
+      margin: 0; }
+      .chat-wrapper .chat .onlineStatus p {
+        line-height: 0;
+        margin: 0;
+        -webkit-transform: translateX(-5px);
+        -ms-transform: translateX(-5px);
+        transform: translateX(-5px);
+        font-size: 13px; }
+    .chat-wrapper .chat .online {
+      color: blue; }
+    .chat-wrapper .chat .offline {
+      color: red; }
+    .chat-wrapper .chat .chat-bubble {
+      padding: 9px;
+      border-radius: 10px;
+      min-width: -webkit-min-content;
+      min-width: -moz-min-content;
+      min-width: min-content;
+      -o-object-fit: cover;
+      object-fit: cover; }
+      .chat-wrapper .chat .chat-bubble p {
+        overflow-wrap: break-word;
+        word-wrap: wrap;
+        margin-bottom: 0px; }
+      .chat-wrapper .chat .chat-bubble .chat-timestamp {
+        font-size: 9px;
+        margin-top: 0px; }
+      .chat-wrapper .chat .chat-bubble img {
+        max-width: 300px;
+        max-height: 200px;
+        -o-object-fit: cover;
+        object-fit: cover; }
+      @media screen and (max-width: 350px) {
+        .chat-wrapper .chat .chat-bubble img {
+          max-width: 200px; } }
+    .chat-wrapper .chat .chat-right-align {
+      color: rgba(240, 128, 128, 0.959);
+      text-align: right; }
+    .chat-wrapper .chat .chat-status {
+      color: rgba(27, 27, 235, 0.904) !important;
+      font-weight: bold; }
+    .chat-wrapper .chat .chat-isTyping {
+      color: lightgrey !important; }
+  .chat-wrapper .chat-input input {
+    width: 100%;
+    height: 50px;
+    border: 1px solid #EDEDED;
+    -webkit-box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.11);
+    box-shadow: 0 12px 20px 0 rgba(0, 0, 0, 0.11);
+    border-radius: 10px;
+    text-align: right;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-right: 1em;
+    margin-bottom: 10px; }
+  .chat-wrapper .chat-input ::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: #E1E1E1; }
+  .chat-wrapper .chat-input ::-moz-placeholder {
+    /* Firefox 19+ */
+    color: #E1E1E1; }
+  .chat-wrapper .chat-input :-ms-input-placeholder {
+    /* IE 10+ */
+    color: #E1E1E1; }
+  .chat-wrapper .chat-input :-moz-placeholder {
+    /* Firefox 18- */
+    color: #E1E1E1; }
+  .chat-wrapper .chat-input .chat-button {
+    width: 100%;
+    height: 30px;
+    background: #f85757;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    -webkit-transition-duration: 0.4s;
+    /* Safari */
+    -o-transition-duration: 0.4s;
+    transition-duration: 0.4s;
+    margin-bottom: 10px; }
+    .chat-wrapper .chat-input .chat-button p {
+      font-size: 15px;
+      font-weight: bold;
+      line-height: 0px; }
+    .chat-wrapper .chat-input .chat-button:hover {
+      background: #f52d2d;
+      cursor: pointer; }
+  .chat-wrapper .panels {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between; }
+    .chat-wrapper .panels .left-panel {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+      flex-direction: row; }
+      .chat-wrapper .panels .left-panel input[type="file"] {
+        display: none; }
+      .chat-wrapper .panels .left-panel .custom-file-upload {
+        display: inline-block;
+        border-radius: 50%;
+        margin-top: 10px;
+        cursor: pointer; }
+        .chat-wrapper .panels .left-panel .custom-file-upload:hover {
+          color: #f85757; }
+      .chat-wrapper .panels .left-panel .attachment {
+        color: grey;
+        -webkit-transform: translateY(10px);
+        -ms-transform: translateY(10px);
+        transform: translateY(10px); }
+      .chat-wrapper .panels .left-panel .location-share {
+        margin: 10px;
+        cursor: pointer; }
+        .chat-wrapper .panels .left-panel .location-share:hover {
+          color: #f85757; }
+        .chat-wrapper .panels .left-panel .location-share .location-on {
+          color: blue; }
+    .chat-wrapper .panels .right-panel button {
+      border: 1px solid grey;
+      line-height: 2em;
+      border-radius: 2px;
+      background: white;
+      padding: 5px 10px;
+      margin: 5px;
+      -webkit-transition-duration: 0.4s;
+      /* Safari */
+      -o-transition-duration: 0.4s;
+      transition-duration: 0.4s;
+      margin-bottom: 10px; }
+      .chat-wrapper .panels .right-panel button p {
+        font-size: 15px;
+        font-weight: bold;
+        line-height: 0px; }
+      .chat-wrapper .panels .right-panel button:hover {
+        cursor: pointer; }
+    .chat-wrapper .panels .right-panel:last-of-type {
+      margin-right: 0; }
+  .chat-wrapper .chat-map {
+    display: none; }
+  .chat-wrapper .visible {
+    display: block; }

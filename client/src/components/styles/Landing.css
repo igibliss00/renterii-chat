@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro");
+.v-header {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  color: #fff; }
+  .v-header .fullscreen-video-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden; }
+    .v-header .fullscreen-video-wrap video {
+      min-height: 100%;
+      min-width: 100%; }
+  .v-header .header-overlay {
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    z-index: 1;
+    background: #5f5f5f00;
+    opacity: 0.85; }
+  .v-header img {
+    z-index: 5;
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block; }
+  .v-header figure {
+    -webkit-transform: translateX(-100px);
+    -ms-transform: translateX(-100px);
+    transform: translateX(-100px);
+    z-index: 4;
+    width: 200px;
+    height: 60px;
+    cursor: pointer; }
+    .v-header figure:hover div {
+      -webkit-transform: rotateX(-90deg);
+      transform: rotateX(-90deg); }
+    .v-header figure div {
+      height: 100%;
+      transform-style: preserve-3d;
+      -webkit-transform-style: preserve-3d;
+      -o-transition: 0.25s;
+      transition: 0.25s;
+      -webkit-transition: 0.25s; }
+      .v-header figure div span {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        border: 5px solid #fff;
+        font-family: 'Source Sans Pro',sans-serif;
+        line-height: 50px;
+        font-size: 17pt;
+        text-align: center;
+        text-transform: uppercase; }
+        .v-header figure div span:nth-child(1) {
+          color: #fff;
+          transform: translate3d(0, 0, 30px);
+          -webkit-transform: translate3d(0, 0, 30px); }
+        .v-header figure div span:nth-child(2) {
+          color: lightgrey;
+          background: #fff;
+          transform: rotateX(90deg) translate3d(0, 0, 30px);
+          -webkit-transform: rotateX(90deg) translate3d(0, 0, 30px); }
+  .v-header .auth {
+    color: black;
+    z-index: 5;
+    background: white;
+    width: 500px;
+    height: 230px;
+    border-radius: 30px; }
+
+.container {
+  max-width: 960px;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: auto;
+  text-align: center; }
+
+.fade {
+  opacity: 0; }

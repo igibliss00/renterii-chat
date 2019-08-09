@@ -1,0 +1,47 @@
+.location-share-modal {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  display: -ms-grid;
+  display: grid;
+  grid-gap: 5px;
+  background: white;
+  border: 1px solid #dddddd;
+  border-radius: 10px;
+  padding: 30px; }
+  .location-share-modal .modal-close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    color: grey; }
+    .location-share-modal .modal-close-btn:hover {
+      color: black;
+      cursor: pointer; }
+  .location-share-modal .modal-buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around; }
+  .location-share-modal .check-circle {
+    color: rgba(0, 0, 255, 0.63);
+    font-size: 4em;
+    cursor: pointer; }
+  .location-share-modal .cancel {
+    color: #f85757;
+    font-size: 4em;
+    cursor: pointer; }
+
+@media screen and (max-width: 530px) {
+  .modal-close-btn {
+    margin-right: 20%; } }
