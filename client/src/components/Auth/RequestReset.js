@@ -1,7 +1,11 @@
 import React, { useState } from 'react'
 import { useMutation } from 'react-apollo-hooks'
 
+<<<<<<< HEAD
 import '../styles/Form.css'
+=======
+import '../styles/form.css'
+>>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 import { REQUEST_RESET_MUTATION } from '../../graphql/mutation'
 import Error from '../../util/ErrorMessage'
 

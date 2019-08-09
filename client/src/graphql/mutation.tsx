@@ -11,11 +11,14 @@ export const OAUTH_MUTATION = gql`
     }
   }
 `
+<<<<<<< HEAD
 export const TOGGLE_AUTH_MODAL_MUTATION = gql`
   mutation {
     toggleAuthModal @client
   }
 `
+=======
+>>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 
 export const CLOSE_AUTH_MODAL_MUTATION = gql`
   mutation {
@@ -83,6 +86,7 @@ export const SIGNUP_MUTATION = gql`
             }
         }
     }
+<<<<<<< HEAD
 `
 
 
@@ -171,3 +175,6 @@ export const TOGGLE_MAP_MUTATION = gql`
     toggleMap @client
   }
 `
+=======
+`
+>>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316

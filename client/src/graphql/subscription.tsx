@@ -1,5 +1,6 @@
 import { gql } from 'apollo-boost'
 
+<<<<<<< HEAD
 export const MESSAGE_SUBSCRIPTION = gql`
     subscription NewMessage($channel: String!){
         newMessage(
@@ -27,6 +28,8 @@ export const MESSAGE_SUBSCRIPTION = gql`
     }
 `
 
+=======
+>>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 export const CHANNEL_SUBSCRIPTION = gql`
     subscription NewChannel {
         newChannel{
@@ -41,6 +44,7 @@ export const CHANNEL_SUBSCRIPTION = gql`
             }
         }
     }
+<<<<<<< HEAD
 `
 
 export const LOCATION_SUBSCRIPTION = gql`
@@ -66,4 +70,6 @@ export const ONLINE_STATUS_SUBSCRIPTION = gql`
         }
     }
     
+=======
+>>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
 `

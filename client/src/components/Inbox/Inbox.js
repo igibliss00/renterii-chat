@@ -10,7 +10,11 @@ import '../styles/Inbox.css'
 const Inbox = () => (
     <div className="inbox">
         <Query
+<<<<<<< HEAD
             query={GET_CHANNELS_QUERY} 
+=======
+            query={GET_CHANNELS_QUERY}
+>>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
             options={{ fetchPolicy: 'network-only'}}
         >
             {({ subscribeToMore, loading, error, ...result }) => {
