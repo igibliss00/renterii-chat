@@ -4,6 +4,7 @@ import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import Settings from '@material-ui/icons/Settings'
 import ExitToApp from '@material-ui/icons/ExitToApp'
 import { useTrail, animated } from 'react-spring'
+import Treeview from "./Treeview/Treeview"
 
 import './styles/Menu.css'
 import Context from '../store/context'
@@ -51,6 +52,10 @@ const menuArr = [
     },
     {
         icon: <ChatIcon className="menu-icons" />,
+        name: "Chat"
+    },
+    {
+        icon: <Treeview />,
         name: "Chat"
     },
     {

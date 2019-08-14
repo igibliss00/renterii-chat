@@ -8,6 +8,7 @@
     text-align: left;
     color: rgba(128, 128, 128, 0.753);
     font-weight: bold;
+    z-index: 5;
     .menu-icons {
         transform: translateY(8px);
         padding-right: 5px;
@@ -15,7 +16,7 @@
     li {
         cursor: pointer;
         list-style: none;
-        height: 70px;
+        height: auto;
         img {
             display: block;
             margin: auto;
@@ -25,6 +26,9 @@
         }
         &:first-of-type {
             margin-bottom: 40px;
+        }
+        &:nth-of-type(3) {
+            color: white;
         }
         &:last-of-type {
             position: absolute;

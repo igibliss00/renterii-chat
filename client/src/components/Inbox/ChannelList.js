@@ -17,13 +17,14 @@ const ChannelList = ({ channels, subscribeToNewChannel }) => {
     }, [])
 
     const trail = useTrail(channels.length, {
-        config: { duration: 1000 },
+        config: { duration: 1500 },
         from: {
-            marginTop: -20,
-            opacity: 0
+            transform: 'translateX(500px)',
+            opacity: 0,
         },
+        delay: 500,
         to: {
-            marginTop: 20,
+            transform: 'translateX(0)',
             opacity: 1
         }
     })

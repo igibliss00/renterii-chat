@@ -1,5 +1,5 @@
 import React, {useContext } from 'react'
-import { useTrail, animated, config } from 'react-spring'
+import { useTrail, animated } from 'react-spring'
 import { useQuery } from 'react-apollo-hooks'
 
 import { GET_POSTS } from '../../graphql/query'
@@ -14,13 +14,18 @@ const Card = () => {
     const { data: { posts }, error, loading } = useQuery(GET_POSTS)
 
     const trail = useTrail(posts && posts.length, {
+        config: { 
+            duration: 1000,
+            tension: 500, 
+        },
         from: {
-            marginTop: -30,
+            marginTop: -50,
             opacity: 0,
         },
+        delay: 1500,
         to: {
-            marginTop: 30,
-            opacity: 1
+            marginTop: 0,
+            opacity: 1,
         }
     })
     const authId = localStorage.getItem(AUTH_ID)

@@ -6,6 +6,7 @@ import {
     SELECT_CARD, 
     SELECT_CHANNEL,
     SELECT_MENU, 
+    AUTH_DELAY,
 } from '../constants'
 
 export default function reducer(state = {}, action: any) {
@@ -58,6 +59,11 @@ export default function reducer(state = {}, action: any) {
             return {
                 ...state,
                 menu: action.payload
+            }
+        case AUTH_DELAY:
+            return {
+                ...state,
+                authDelay: action.payload
             }
         default:
             return state

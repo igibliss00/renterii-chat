@@ -9,7 +9,8 @@
   padding-left: 5px;
   text-align: left;
   color: rgba(128, 128, 128, 0.753);
-  font-weight: bold; }
+  font-weight: bold;
+  z-index: 5; }
   .chat-menu .menu-icons {
     -webkit-transform: translateY(8px);
     -ms-transform: translateY(8px);
@@ -18,7 +19,7 @@
   .chat-menu li {
     cursor: pointer;
     list-style: none;
-    height: 70px; }
+    height: auto; }
     .chat-menu li img {
       display: block;
       margin: auto;
@@ -27,6 +28,8 @@
       height: auto; }
     .chat-menu li:first-of-type {
       margin-bottom: 40px; }
+    .chat-menu li:nth-of-type(3) {
+      color: white; }
     .chat-menu li:last-of-type {
       position: absolute;
       bottom: 40px;

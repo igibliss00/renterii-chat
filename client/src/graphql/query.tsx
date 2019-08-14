@@ -383,6 +383,7 @@ export const GET_MY_CHAT_POSTS = gql`
 export const GET_ONLINE_STATUS_QUERY = gql`
     query User($id: ID!){
     	user(id: $id){
+            id
             onlineStatus
       }
     }

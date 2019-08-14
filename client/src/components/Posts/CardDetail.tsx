@@ -18,7 +18,7 @@ const CardDetail: React.FunctionComponent = () => {
 
     if(error) return <div>Detail query error</div>
     if(loading) return <Spinner />
-    const { title, body, image, price, latitude, longitude, author: {firstName, lastName} } = !!post && post
+    const { title, body, image, price, author: {firstName, lastName} } = !!post && post
     return (
         <div className="card-detail-info">
             <ul>

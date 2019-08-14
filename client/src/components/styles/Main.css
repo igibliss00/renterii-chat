@@ -1,8 +1,57 @@
-.main {
-  background-image: url(../../media/background.jpg);
-  width: 100vw;
-  height: 100vh; }
-  .main .main-container {
+.main .main-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  padding: 30px;
+  height: 100vh;
+  width: 100%; }
+  .main .main-container .menu {
+    width: 15%;
+    height: 100%;
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px; }
+  .main .main-container .chat-inbox {
+    width: 25%;
+    height: 100%;
+    background: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    overflow: auto;
+    scrollbar-width: thin; }
+    .main .main-container .chat-inbox::-webkit-scrollbar {
+      width: 0px; }
+    .main .main-container .chat-inbox::-webkit-scrollbar-track {
+      width: 0px; }
+    .main .main-container .chat-inbox::-webkit-scrollbar-thumb {
+      width: 0px; }
+  .main .main-container .main-chat {
+    width: 40%;
+    height: 100%;
+    background: white;
+    margin: 10px 0px 10px 10px;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px; }
+  .main .main-container .user-profile {
+    width: 20%;
+    height: 100%;
+    background: white;
+    margin: 10px 10px 10px 1px;
+    padding: 10px;
+    border-radius: 0px 10px 10px 0px; }
+  .main .main-container .main-cards {
+    width: 60%;
+    height: 100%;
+    background: white;
+    margin: 10px 0px 10px 10px;
+    padding: 10px;
+    border-radius: 10px 0px 0px 10px;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -10,115 +59,88 @@
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    padding: 30px;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    overflow: auto;
+    color: black;
+    position: relative;
+    scrollbar-width: none; }
+    .main .main-container .main-cards::-webkit-scrollbar {
+      width: 0px; }
+    .main .main-container .main-cards::-webkit-scrollbar-track {
+      width: 0px; }
+    .main .main-container .main-cards::-webkit-scrollbar-thumb {
+      width: 0px; }
+  .main .main-container .card-detail {
+    width: 30%;
     height: 100%;
-    width: 100%; }
-    .main .main-container .menu {
-      width: 15%;
-      height: 100%;
-      background: white;
-      margin: 10px;
-      padding: 10px;
-      border-radius: 10px; }
-    .main .main-container .chat-inbox {
-      width: 25%;
-      height: 100%;
-      background: white;
-      margin: 10px;
-      padding: 10px;
-      border-radius: 10px;
-      overflow: auto;
-      scrollbar-width: thin; }
-      .main .main-container .chat-inbox::-webkit-scrollbar {
-        width: 0px; }
-      .main .main-container .chat-inbox::-webkit-scrollbar-track {
-        width: 0px; }
-      .main .main-container .chat-inbox::-webkit-scrollbar-thumb {
-        width: 0px; }
-    .main .main-container .main-chat {
-      width: 40%;
-      height: 100%;
-      background: white;
-      margin: 10px 0px 10px 10px;
-      padding: 10px;
-      border-radius: 10px 0px 0px 10px; }
-    .main .main-container .user-profile {
-      width: 20%;
-      height: 100%;
-      background: white;
-      margin: 10px 10px 10px 1px;
-      padding: 10px;
-      border-radius: 0px 10px 10px 0px; }
-    .main .main-container .main-cards {
-      width: 60%;
-      height: 100%;
-      background: white;
-      margin: 10px 0px 10px 10px;
-      padding: 10px;
-      border-radius: 10px 0px 0px 10px;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: horizontal;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-      flex-direction: row;
-      -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-      overflow: auto;
-      color: black;
-      position: relative;
-      scrollbar-width: none; }
-      .main .main-container .main-cards::-webkit-scrollbar {
-        width: 0px; }
-      .main .main-container .main-cards::-webkit-scrollbar-track {
-        width: 0px; }
-      .main .main-container .main-cards::-webkit-scrollbar-thumb {
-        width: 0px; }
-    .main .main-container .card-detail {
-      width: 30%;
-      height: 100%;
-      background: white;
-      margin: 10px 10px 10px 1px;
-      padding: 35px 20px;
-      border-radius: 0px 10px 10px 0px;
-      overflow: auto;
-      scrollbar-width: none; }
-      .main .main-container .card-detail::-webkit-scrollbar {
-        width: 0px; }
-      .main .main-container .card-detail::-webkit-scrollbar-track {
-        width: 0px; }
-      .main .main-container .card-detail::-webkit-scrollbar-thumb {
-        width: 0px; }
+    background: white;
+    margin: 10px 10px 10px 1px;
+    padding: 35px 20px;
+    border-radius: 0px 10px 10px 0px;
+    overflow: auto;
+    scrollbar-width: none; }
+    .main .main-container .card-detail::-webkit-scrollbar {
+      width: 0px; }
+    .main .main-container .card-detail::-webkit-scrollbar-track {
+      width: 0px; }
+    .main .main-container .card-detail::-webkit-scrollbar-thumb {
+      width: 0px; }
+  .main .main-container .new-channel-portal {
+    padding: 0;
+    width: 60%;
+    height: 100%;
+    background: white;
+    margin: 10px 0px 10px 10px;
+    border-radius: 20px 0px 0px 20px; }
+  .main .main-container .browse {
+    margin: 10px;
+    padding: 0;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background: white;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    width: 85%;
+    height: 100%;
+    border-radius: 20px; }
 
 @media screen and (max-width: 930px) {
-  .main {
-    height: auto; }
-    .main .main-container {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column; }
-      .main .main-container .menu {
-        width: 100%;
-        height: 100px; }
-      .main .main-container .chat-inbox {
-        width: 100%;
-        height: 200px; }
-      .main .main-container .main-chat {
-        width: 100%;
-        border-radius: 10px;
-        margin: 10px;
-        height: 500px; }
-      .main .main-container .user-profile {
-        width: 100%;
-        border-radius: 10px;
-        margin: 10px; }
-      .main .main-container .main-cards {
-        width: 100%;
-        border-radius: 10px;
-        margin: 10px; }
-      .main .main-container .card-detail {
-        width: 100%;
-        border-radius: 10px;
-        margin: 10px; } }
+  .main .main-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column; }
+    .main .main-container .menu {
+      width: 100%;
+      height: 100px; }
+    .main .main-container .chat-inbox {
+      width: 100%;
+      height: 200px; }
+    .main .main-container .main-chat {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px;
+      height: 500px; }
+    .main .main-container .user-profile {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px; }
+    .main .main-container .main-cards {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px; }
+    .main .main-container .card-detail {
+      width: 100%;
+      border-radius: 10px;
+      margin: 10px; } }

@@ -1,13 +1,14 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import PropTypes from 'prop-types'
 import { useMutation } from 'react-apollo-hooks'
 import { Link, withRouter } from 'react-router-dom'
 
 import "../styles/Form.css"
 import { SIGNUP_MUTATION, LOGIN_MUTATION } from '../../graphql/mutation'
-import { AUTH_TOKEN, AUTH_ID } from '../../constants';
+import { AUTH_TOKEN, AUTH_ID, AUTH_DELAY } from '../../constants';
 import GoogleAuth from './GoogleAuth'
 import SpinnerWhite from '../../util/SpinnerWhite'
+import Context from '../../store/context'
 
 const Auth: React.FunctionComponent = ({ history }: any) => {
     const [email, setEmail] = useState<string>('')
@@ -17,6 +18,7 @@ const Auth: React.FunctionComponent = ({ history }: any) => {
     const [lastName, setLastName] = useState<string>('')
     const [loginStatus, setLoginStatus] = useState<boolean>(false)
     const passwordError = password !== repassword ? "Password does not match!" : null
+    const { dispatch } = useContext<any>(Context)
 
     const variables = loginStatus ? { firstName, lastName, email, password } : { email, password }
     const authenticate = useMutation(loginStatus ? SIGNUP_MUTATION : LOGIN_MUTATION, { variables })
@@ -33,7 +35,8 @@ const Auth: React.FunctionComponent = ({ history }: any) => {
             authResults = await authenticate()
             console.log("authResults", authResults)
             if(!authResults.data.login.token) {
-                return <SpinnerWhite />
+                dispatch({ type: AUTH_DELAY, payload: true })
+               
             }
             window.localStorage.setItem(AUTH_TOKEN, loginStatus ? authResults.data.createUser.token : authResults.data.login.token)
             window.localStorage.setItem(AUTH_ID, loginStatus ? authResults.data.createUser.user.id : authResults.data.login.user.id)

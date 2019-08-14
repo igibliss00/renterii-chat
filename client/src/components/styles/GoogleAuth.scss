@@ -6,7 +6,6 @@
     justify-content: center;
     button {
         width: $maxWidth;
-<<<<<<< HEAD
         height: 30px;
         border-radius: 8px !important;
         margin-top: 10px;
@@ -15,8 +14,6 @@
             width: 10px;
             transform: translateY(-8px);
         }
-=======
->>>>>>> e1a0a5c5dd789735947256a647e594b9228c7316
         span {
             margin: 0 auto;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -24,6 +21,7 @@
             sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            padding: 0px !important;
         }
     }
 }
@@ -31,6 +29,10 @@
 @include mQ(800px) {
     .google-auth {
         max-width: calc(100vw - 10%);
-        margin: 20px auto;
+        button {
+            span {
+                font-size: 10px;
+            }
+        }
     }
 }

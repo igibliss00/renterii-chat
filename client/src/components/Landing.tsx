@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useSpring, animated } from 'react-spring'
 
 import './styles/Landing.css'
 import Auth from './Auth/Auth'
+import Context from '../store/context'
+import Spinner from '../util/Spinner'
 
 const config = { 
     mass: 5, 
@@ -13,6 +15,7 @@ const config = {
 
 const Landing: React.FunctionComponent = () => {
     const [toggle, set] = useState<boolean>(false)
+    const { state } = useContext<any>(Context)
     const props = useSpring<any>({
         marginTop: toggle ? -600: 0,
         opacity: toggle ? 1: 0,
@@ -41,6 +44,7 @@ const Landing: React.FunctionComponent = () => {
                 </div>
             </figure>
             <animated.div className="auth" style={props}>
+                {state.authDelay && <Spinner />}
                 <Auth />
             </animated.div>
         </div>

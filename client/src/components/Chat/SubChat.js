@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 import { compose, graphql } from 'react-apollo'
 import Attachment from '@material-ui/icons/Attachment'
 import Location from '@material-ui/icons/MyLocation'
-import Arrow from '@material-ui/icons/ArrowBack'
-import { Link } from 'react-router-dom'
 
 import { CREATE_MESSAGE_MUTATION, TOGGLE_AUTH_MODAL_MUTATION, DELETE_LOCATION_MUTATION } from '../../graphql/mutation'
 import { LOCAL_STATE_MAP_QUERY, LOCAL_AUTH_MODAL_STATE_QUERY } from '../../graphql/query'
@@ -13,7 +11,7 @@ import LocationWarningModal from './LocationWarningModal'
 import ChatMapContainer from './ChatMapContainer'
 import { AUTH_ID } from '../../constants'
 import TypeIndicator from './TypeIndicator'
-import Message from './Message'
+import Message from './Message2'
 
 class SubChat extends PureComponent {
     state = {
@@ -138,13 +136,6 @@ class SubChat extends PureComponent {
         })
         return (
             <div className="chat-wrapper">
-                <Link 
-                    className="back-arrow"
-                    to={"/inbox/"}
-                >
-                    <Arrow /> 
-                    <p>Back to Inbox</p>
-                </Link>
                 <h3>You are now chatting with {chatUsername[0].firstName}</h3>
                 <div className="chat">
                     <Message 
@@ -218,6 +209,7 @@ class SubChat extends PureComponent {
     }
 
 SubChat.propTypes = {
+    messages: PropTypes.string,
     channel: PropTypes.string,
     members: PropTypes.array,
     data: PropTypes.object.isRequired

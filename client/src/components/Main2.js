@@ -10,6 +10,8 @@ import UserProfile from './Chat/UserProfile'
 import Context from '../store/context'
 import Card from './Posts/Card'
 import CardDetail from './Posts/CardDetail'
+import NewChannelForm from './Chat/NewChannel/NewChannelForm2'
+import Browse from './Chat/Browse/Browse'
 
 const Main = () => {
     const { state } = useContext(Context)
@@ -39,16 +41,16 @@ const Main = () => {
                     items={menu}
                     from={{ 
                         opacity: 0,    
-                        transform: 'translateY(-400px) scale(0) rotateX(0deg)', 
+                        transform: 'translateX(400px) scale(1)', 
                     }}
                     enter={{ 
                         opacity: 1,
-                        transform: 'translateY(0px) scale(1) rotateX(0deg)',
-                        delay: 100,
+                        transform: 'translateX(0px) scale(1)',
+                        delay: 800,
                     }}
                     leave={{ 
                         opacity: 0,
-                        transform: 'translateY(-400px) scale(0) rotateX(0deg)', 
+                        transform: 'translateX(400px) scale(1)', 
                     }}
                 >
                     {menu => (menu === 'Chat')
@@ -79,6 +81,23 @@ const Main = () => {
                                         <CardDetail />
                                     </section>}
                                 </>
+                            )
+                            : (menu === "Create")
+                            ? (props => 
+                                <>
+                                    <section style={props} className="new-channel-portal">
+                                        <NewChannelForm />
+                                    </section>
+                                    {selectedCard && <section style={props} className="card-detail">
+                                        Hello detail
+                                    </section>}
+                                </>
+                            )
+                            : (menu === "Browse")
+                            ? (props => 
+                                <section style={props} className="browse">
+                                    <Browse />
+                                </section>
                             )
                             : ""
                     }
