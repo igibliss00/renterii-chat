@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { GoogleLogin } from 'react-google-login'
 import { useMutation } from 'react-apollo-hooks'
 
@@ -7,6 +7,7 @@ import { OAUTH_MUTATION } from '../../graphql/mutation'
 import '../styles/GoogleAuth.css'
 
 const GoogleAuth = props => {
+    const [ authError, setError ] = useState()
     const authenticate = useMutation(OAUTH_MUTATION)
     const onSuccess = async googleUser => {
         const idToken = await googleUser.getAuthResponse().id_token
@@ -17,7 +18,7 @@ const GoogleAuth = props => {
             await localStorage.removeItem(OAUTH_TOKEN)
             props.history.push('/') 
         } catch(err) {
-            throw new Error("Authentication error", err)
+            setError(err)
         }
     }
 
@@ -33,6 +34,8 @@ const GoogleAuth = props => {
                 onFailure={responseGoogle}
                 isSignedIn={true}
             />
+            {authError}
+            {authError && "Please log out of your Google account from your browser"}
         </div>
     )
 }

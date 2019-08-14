@@ -1,3 +1,5 @@
+@import "mixins.scss";
+
 .main {
     background-image: url(../../media/background.jpg);
     // background: lightgrey;
@@ -24,6 +26,19 @@
             margin: 10px;
             padding: 10px;
             border-radius: 10px;
+            overflow: auto;
+            scrollbar-width: thin;
+            &::-webkit-scrollbar {
+              width: 0px;
+            }
+    
+            &::-webkit-scrollbar-track {
+                width: 0px;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                width: 0px;
+            }
         }
         .main-chat {
             width: 40%;
@@ -86,6 +101,44 @@
         
             &::-webkit-scrollbar-thumb {
                 width: 0px;
+            }
+        }
+    }
+}
+
+@include mQ(930px){
+    .main {
+        height: auto;
+        .main-container {
+            flex-direction: column;
+            .menu {
+                width: 100%;
+                height: 100px;
+            }
+            .chat-inbox {
+                width: 100%;
+                height: 200px;
+            }
+            .main-chat {
+                width: 100%;
+                border-radius: 10px;
+                margin: 10px;
+                height: 500px;
+            }
+            .user-profile {
+                width: 100%;
+                border-radius: 10px;
+                margin: 10px;
+            }
+            .main-cards {
+                width: 100%;
+                border-radius: 10px;
+                margin: 10px;
+            }
+            .card-detail {
+                width: 100%;
+                border-radius: 10px;
+                margin: 10px;
             }
         }
     }

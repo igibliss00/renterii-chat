@@ -24,7 +24,7 @@ const Main = () => {
         },
         config: config.molasses
     })
-    const { menu, channel } = state
+    const { menu, channel, selectedCard } = !!state && state
 
     return(
         <div className="main">
@@ -75,9 +75,9 @@ const Main = () => {
                                     <section style={props} className="main-cards">
                                         <Card />
                                     </section>
-                                    <section style={props} className="card-detail">
+                                    {selectedCard && <section style={props} className="card-detail">
                                         <CardDetail />
-                                    </section>
+                                    </section>}
                                 </>
                             )
                             : ""

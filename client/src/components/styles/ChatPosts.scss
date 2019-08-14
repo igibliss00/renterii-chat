@@ -1,4 +1,5 @@
 @import "variables.scss";
+@import "mixins.scss";
 
 .inventory {
     box-shadow: 1px 1px 1px 1px #D3D3D3;
@@ -72,5 +73,12 @@
                 max-height: 100%;
             }
         }
+    }
+}
+
+
+@include mQ(930px){
+    .inventory {
+        max-width: 100%;
     }
 }

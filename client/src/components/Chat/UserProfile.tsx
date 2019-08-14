@@ -106,5 +106,5 @@ UserProfile.propTypes = {
     members: PropTypes.array.isRequired,
 }
 
-export default React.memo(UserProfile)
+export default UserProfile
 

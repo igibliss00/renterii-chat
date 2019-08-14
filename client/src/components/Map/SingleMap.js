@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react'
+import PropTypes from 'prop-types'
 import ReactMapGL, { NavigationControl, Marker } from 'react-map-gl'
 import { withStyles } from "@material-ui/core/styles";
 import { unstable_useMediaQuery as useMediaQuery } from "@material-ui/core/useMediaQuery";
@@ -9,21 +10,13 @@ import Context from '../../store/context'
 import { SELECT_PIN, SELECT_YOUR_PIN } from '../../constants'
 import SelectedPopup from './SelectedPopup'
 
-// const INITIAL_VIEWPORT = {
-//     latitude: 43.761539,
-//     longitude: -79.411079,
-//     zoom: 11,
-//     bearing: 0,
-//     pitch: 0
-// }
-
 const SingleMap = props => {
   const { state, dispatch } = useContext(Context)
   const [userPosition, setUserPosition] = useState(null)
   const mobileSize = useMediaQuery("(max-width: 650px)")
 
   //map viewport setup
-  const { latitude, longitude, id, title } = props.post && props.post
+  const { latitude, longitude, id } = props.post && props.post
 
   const [viewport, setViewport] = useState({
     latitude,
@@ -131,5 +124,11 @@ const styles = {
       objectFit: "cover"
     }
   }
+
+SingleMap.propTypes = {
+  latitude: PropTypes.string.isRequired,
+  longitude: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
+}
 
 export default withStyles(styles)(SingleMap)

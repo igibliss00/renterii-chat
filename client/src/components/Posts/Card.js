@@ -33,7 +33,6 @@ const Card = () => {
     if(loading) return <Spinner />
     return trail.map((props, index) => {
         const {id, title, body, author, price, longitude, latitude, image } = posts[index]
-        console.log("id", id)
         return  (
             // either when a pin is selected or the card itself is selected, show the card's background as selected
             <animated.div 

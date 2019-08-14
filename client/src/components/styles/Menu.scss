@@ -1,6 +1,9 @@
 @import "variables.scss";
+@import "mixins.scss";
 
 .chat-menu {
+    display: flex;
+    flex-direction: column;
     padding-left: 5px;
     text-align: left;
     color: rgba(128, 128, 128, 0.753);
@@ -40,4 +43,30 @@
         }
     }
 
+}
+
+@include mQ(930px){
+    .chat-menu {
+        flex-direction: row;
+        justify-content: space-around;
+        height: 30px;
+        li {
+            img {
+                width: 80px;
+            }
+            &:last-of-type {
+                position: static;
+            }
+        }
+    }
+}
+
+@include mQ(700px) {
+    .chat-menu {
+        li {
+            img {
+                display: none;
+            }
+        }
+    }
 }

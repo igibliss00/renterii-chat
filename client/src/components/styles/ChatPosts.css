@@ -70,3 +70,7 @@
     .inventory .items .items-pic {
       width: 50%;
       max-height: 100%; } }
+
+@media screen and (max-width: 930px) {
+  .inventory {
+    max-width: 100%; } }

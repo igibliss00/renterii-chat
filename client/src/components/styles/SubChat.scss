@@ -210,3 +210,10 @@
         display: block;
     }
 }
+
+
+@include mQ(930px){
+    .chat-wrapper {
+        height: 500px;
+    }
+}

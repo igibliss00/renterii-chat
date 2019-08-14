@@ -1,4 +1,11 @@
 .chat-menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
   padding-left: 5px;
   text-align: left;
   color: rgba(128, 128, 128, 0.753);
@@ -33,3 +40,21 @@
         background: white;
         border: 1px solid #f85757;
         color: #f85757; }
+
+@media screen and (max-width: 930px) {
+  .chat-menu {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    height: 30px; }
+    .chat-menu li img {
+      width: 80px; }
+    .chat-menu li:last-of-type {
+      position: static; } }
+
+@media screen and (max-width: 700px) {
+  .chat-menu li img {
+    display: none; } }
