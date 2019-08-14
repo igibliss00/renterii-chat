@@ -1,0 +1,132 @@
+@import "variables.scss";
+@import "mixins.scss";
+
+// .card {
+//     border: none;
+//     box-shadow: 1px 1px 1px 1px #D3D3D3;
+//     padding: 20px;
+//     margin: 20px;
+//     width: 500px;
+//     height: 350px;
+// }
+
+// .btn {
+//     -webkit-transition-duration: 0.4s; /* Safari */
+//     transition-duration: 0.4s;
+//     height: 30px;
+//     width: 100px;
+//     color:#A9A9A9;
+//     box-shadow: 1px 1px 1px 1px #DCDCDC;
+//     border-radius: 3px;
+//     border: 0;
+//     margin: 0 10px;
+//     cursor: pointer;
+//     color: white;
+// }
+  
+// .btn:hover {
+//     background-color: #A9A9A9; 
+// }
+
+// [data-btn="edit"] {
+//     background-color: blue;
+// }
+
+// [data-btn="delete"] {
+//     background-color: orangered;
+// }
+
+// [data-btn="detail"] {
+//     background-color: green;
+// }
+
+.card {
+    width: 150px;
+    height: 300px;
+    background: white;
+    box-shadow: $bs;
+    border-radius: 20px;
+    position: relative;
+    margin: 20px auto;
+    z-index: 1;
+    img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 20px 20px 0px 0px;
+    }
+    p {
+        color: rgba(128, 128, 128, 0.753);
+        font-size: 12px;
+        line-height: 1;
+        font-weight: 300;
+        flex-grow: 1;
+        padding: 0 3rem;
+    }
+    // .button-list {
+    //     width: 100%;
+    //     border-top: 1px solid $lightgrey;
+    //     background: $lightgrey;
+    //     position: absolute;
+    //     bottom: 0px;
+    //     .btn {
+    //         width: 50%;
+    //         float: left;
+    //         text-align: center;
+    //     }
+    //     & > * {
+    //         background: white;
+    //         border: 0;
+    //         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    //         "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    //         sans-serif;
+    //         font-size: 1rem;
+    //         padding: 1rem;
+    //     }
+    // }
+}
+
+.selected {
+    background-color: rgb(228, 228, 228);
+    filter: drop-shadow(230%);
+}
+
+// @include mQ(850px) {
+//     .card {
+//         border-radius: 25px;
+//         .button-list {
+//             // border-bottom-left-radius: 25px;
+//             border-radius: 25px;
+//             .btn:first-of-type {
+//                 border-bottom-left-radius: 25px;
+//             }
+//             .btn:last-of-type {
+//                 border-bottom-right-radius: 25px;
+//             }
+//         } 
+//         .location-icon {
+//             top: 5%;
+//             right: 45%;
+//         }
+//         .pulse {
+//             top: 5%;
+//             right: 50%;
+//         }
+//     }
+
+// }
+
+// @include mQ(640px) {
+//     .card {
+//         width: 250px;
+//         height: 300px;
+//     }
+// }
+
+// @include mQ(515px) {
+//     .card {
+//         width: 80vw;
+//         height: 350px;
+//     }
+// }
+

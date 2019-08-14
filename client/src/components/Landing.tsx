@@ -20,7 +20,6 @@ const Landing: React.FunctionComponent = () => {
     })
 
     const onClickHandler = () => {
-        console.log("i'm clicked")
         set(state => !state)
     }
 

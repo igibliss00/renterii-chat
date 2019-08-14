@@ -2,6 +2,7 @@ import React from 'react'
 import ChatIcon from '@material-ui/icons/Chat'
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import Settings from '@material-ui/icons/Settings'
+import ExitToApp from '@material-ui/icons/ExitToApp'
 
 import './styles/Menu.css'
 
@@ -23,6 +24,10 @@ const Menu: React.FunctionComponent = () => {
             <li>
                 <Settings className="menu-icons" />
                 Settings
+            </li>
+            <li>
+                <ExitToApp className="menu-icons" />
+                Logout
             </li>
         </ul>
     )

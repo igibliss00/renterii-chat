@@ -6,12 +6,13 @@ import { Switch, Route, BrowserRouter } from 'react-router-dom'
 // import { AuthRoute, UnauthRoute } from 'react-router-auth'
 
 const Landing = lazy(() => import('./components/Landing'))
-const Main = lazy(() => import('./components/Main'))
+const Main = lazy(() => import('./components/Main2'))
 const RequestReset = lazy(() => import( './components/Auth/RequestReset'))  
 const Reset = lazy(() => import('./components/Auth/Reset')) 
 const Inbox = lazy(() => import( './components/Inbox/Inbox'))  
 import Context  from './store/context'
 import reducer from './store/reducer'
+import Spinner from './util/Spinner'
 
 const App = () => {
   const initialState = useContext<any>(Context)
@@ -21,7 +22,7 @@ const App = () => {
     // @ts-ignore
     <Context.Provider value={{ state, dispatch }}>
       <BrowserRouter>
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={<Spinner />}>
           <Switch>
             <Route 
               exact 

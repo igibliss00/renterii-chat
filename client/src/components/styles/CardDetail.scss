@@ -1,0 +1,39 @@
+@import "variables.scss";
+
+.card-detail-info {
+    ul {
+        text-align: center;
+        list-style-type: none;
+        padding-left: 0;
+        font-size: 13px;
+        li {
+            border-radius: 10px;
+            border: 1px $lightgrey solid;
+            padding: 5px;
+            margin: 10px 0px;
+            line-height: 1em;
+            p {
+                display: flex;
+                justify-content: space-between;
+                color: rgba(128, 128, 128, 0.801);
+            }
+            img {
+                max-width: 100%;
+                border-radius: 20px;
+                object-fit: cover;
+            }
+            &:first-of-type, &:nth-of-type(2), &:last-of-type {
+                border: none;
+                padding: 0;
+                margin: 30px auto;
+            }
+            span {
+                color: $red;
+                background: rgba(248, 87, 87, 0.26);
+                padding: 5px 10px;
+                border-radius: 10px;
+                font-weight: bold;
+            }   
+        }
+    }
+}

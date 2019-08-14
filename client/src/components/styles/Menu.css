@@ -9,12 +9,27 @@
     transform: translateY(8px);
     padding-right: 5px; }
   .chat-menu li {
+    cursor: pointer;
     list-style: none;
     height: 70px; }
     .chat-menu li img {
       display: block;
       margin: auto;
+      margin-right: 100px;
       width: 100px;
       height: auto; }
     .chat-menu li:first-of-type {
       margin-bottom: 40px; }
+    .chat-menu li:last-of-type {
+      position: absolute;
+      bottom: 40px;
+      background: #f85757;
+      color: white;
+      max-width: 100%;
+      height: 40px;
+      padding: 0px 10px 10px 10px;
+      border-radius: 10px; }
+      .chat-menu li:last-of-type:hover {
+        background: white;
+        border: 1px solid #f85757;
+        color: #f85757; }

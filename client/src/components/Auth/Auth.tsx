@@ -7,6 +7,7 @@ import "../styles/Form.css"
 import { SIGNUP_MUTATION, LOGIN_MUTATION } from '../../graphql/mutation'
 import { AUTH_TOKEN, AUTH_ID } from '../../constants';
 import GoogleAuth from './GoogleAuth'
+import SpinnerWhite from '../../util/SpinnerWhite'
 
 const Auth: React.FunctionComponent = ({ history }: any) => {
     const [email, setEmail] = useState<string>('')
@@ -30,12 +31,14 @@ const Auth: React.FunctionComponent = ({ history }: any) => {
         let authResults;
         try {
             authResults = await authenticate()
-            if(authResults) {
-                window.localStorage.setItem(AUTH_TOKEN, loginStatus ? authResults.data.createUser.token : authResults.data.login.token)
-                window.localStorage.setItem(AUTH_ID, loginStatus ? authResults.data.createUser.user.id : authResults.data.login.user.id)
-                // window.localStorage.setItem(PERMISSIONS, authResults.data.user.permissions)
-                history.push('/main')
+            console.log("authResults", authResults)
+            if(!authResults.data.login.token) {
+                return <SpinnerWhite />
             }
+            window.localStorage.setItem(AUTH_TOKEN, loginStatus ? authResults.data.createUser.token : authResults.data.login.token)
+            window.localStorage.setItem(AUTH_ID, loginStatus ? authResults.data.createUser.user.id : authResults.data.login.user.id)
+            // window.localStorage.setItem(PERMISSIONS, authResults.data.user.permissions)
+            history.push('/main')
         } catch(err) {
             throw new Error(err)
         }

@@ -28,14 +28,14 @@ import {
 const cache = new InMemoryCache();
 
 const httpLink = new HttpLink({
-    // uri: 'http://localhost:4000',
-    uri: 'https://floating-waters-72393.herokuapp.com/',
+    uri: 'http://localhost:4000',
+    // uri: 'https://floating-waters-72393.herokuapp.com/',
     credentials: 'same-origin'
 });
   
 const wsLink = new WebSocketLink({
-    // uri: `ws://localhost:4000/`,
-    uri: `wss://floating-waters-72393.herokuapp.com/`,
+    uri: `ws://localhost:4000/`,
+    // uri: `wss://floating-waters-72393.herokuapp.com/`,
     options: {
       reconnect: true,
     },
@@ -96,8 +96,8 @@ const link = ApolloLink.from([
     //if network error, logout
     if (networkError) {
       console.log("network error", networkError)
-      window.localStorage.removeItem(AUTH_TOKEN);
-      window.localStorage.removeItem(OAUTH_TOKEN);
+      // window.localStorage.removeItem(AUTH_TOKEN);
+      // window.localStorage.removeItem(OAUTH_TOKEN);
     }
   }),
   requestLink,

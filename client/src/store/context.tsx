@@ -10,6 +10,7 @@ interface MyContextType {
     selectedCardPin?: any,
     members?: string[],
     channel?: string,
+    menu?: any,
 }
 
 const Context = createContext<MyContextType>({
@@ -24,7 +25,7 @@ const Context = createContext<MyContextType>({
     selectedCardPin: null,
     members: [],
     channel: '',
-
+    menu: null
 })
 
 export default Context

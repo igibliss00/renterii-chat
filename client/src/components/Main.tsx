@@ -1,9 +1,9 @@
 import React, { useContext } from 'react'
-import { useSpring, animated, config } from 'react-spring'
-
+import { useSpring, useTransition, animated, config } from 'react-spring'
+import {Transition} from 'react-spring/renderprops'
 
 import './styles/Main.css'
-import Menu from './Menu'
+import Menu from './Menu2'
 import Inbox from './Inbox/Inbox'
 import Chat from './Chat/Chat'
 import UserProfile from './Chat/UserProfile'
@@ -22,41 +22,125 @@ const Main: React.FunctionComponent = () => {
         },
         config: config.molasses
     })
+
+    const { menu, channel } = state
+    // const transitions = useTransition(items, item => item.key, {
+    // from: { 
+    //     opacity: 0,    
+    //     transform: 'translateY(-400px) scale(0) rotateX(90deg)', 
+    // },
+    // enter: { 
+    //     opacity: 1,
+    //     transform: 'translateY(0px) scale(1) rotateX(0deg)',
+    // },
+    // leave: { 
+    //     opacity: 0,
+    //     transform: 'translateY(-400px) scale(0) rotateX(90deg)', 
+    // },
+    // return transitions.map(({ item, props, key }) =>
+    //     <animated.div key={key} style={props}>Hello</animated.div>
+    // )
+    // const { data, error, loading } = useQuery(GET_POSTS)
+
+    
     return(
         <div className="main">
-            <animated.div 
-                className="container"
-                style={props}
-            >
-                <aside className="menu">
+            <div className="main-container">
+                <animated.aside 
+                    className="menu"
+                    style={props}
+                >
                     <Menu />
-                </aside>
-                <section className="chat-inbox">
-                    <Inbox />
-                </section>
-                <section className="main-chat">
-                {/* 
-                // @ts-ignore */}
-                    {state.channel && <Chat chatInfo={state} />}
-                </section>
-                <aside className="user-profile">
-                {/* 
-                // @ts-ignore */}
-                    {state.channel && <UserProfile profile={state} />}
-                </aside>
-            </animated.div>
+                </animated.aside>
+            {menu === "Chat" && (
+                <>
+                <Transition
+                    items={menu}
+                    from={{ 
+                        opacity: 0,    
+                        transform: 'translateY(-400px) scale(0) rotateX(90deg)', 
+                    }}
+                    enter={{ 
+                        opacity: 1,
+                        transform: 'translateY(0px) scale(1) rotateX(0deg)',
+                    }}
+                    leave={{ 
+                        opacity: 0,
+                        transform: 'translateY(-400px) scale(0) rotateX(90deg)', 
+                    }}
+                >
+                    {menu => 
+                    (props => 
+                        <>
+                            <section style={props} className="chat-inbox">
+                                <Inbox />
+                            </section>
+                            <section style={props} className="main-chat">
+                            {/* 
+                            // @ts-ignore */}
+                                {channel && <Chat chatInfo={state} />}
+                            </section>
+                            <aside style={props} className="user-profile">
+                            {/* 
+                            // @ts-ignore */}
+                                {channel && <UserProfile profile={state} />}
+                            </aside>
+                        </>
+                    )}
+                </Transition>
+                </>
+            )}
+            {menu === "Shop" && (
+                <>
+                    <section className="main-cards">
+                        Hello
+                    </section>             
+                </>
+            )}
+            </div>
         </div>
     )
 }
 
 export default Main
 
-// from: {
-//     transform: 'translateY(-100px)',
-//     opacity: 0,
-// },
-// to: {
-//     marginTop: 0,
-//     opacity: 1
-// },
-// config: config.molasses
+
+// if(menu === "Chat") {
+//     return (
+//         <Transition
+//             items={menu}
+//             from={{ 
+//                 opacity: 0,    
+//                 transform: 'translateY(-400px) scale(0) rotateX(90deg)', 
+//             }}
+//             enter={{ 
+//                 opacity: 1,
+//                 transform: 'translateY(0px) scale(1) rotateX(0deg)',
+//             }}
+//             leave={{ 
+//                 opacity: 0,
+//                 transform: 'translateY(-400px) scale(0) rotateX(90deg)', 
+//             }}
+//         >
+//         {menu => 
+//         (props => 
+//                 <>
+//                     <section style={props} className="chat-inbox">
+//                         <Inbox />
+//                     </section>
+//                     <section style={props} className="main-chat">
+//                     {/* 
+//                     // @ts-ignore */}
+//                         {channel && <Chat chatInfo={state} />}
+//                     </section>
+//                     <aside style={props} className="user-profile">
+//                     {/* 
+//                     // @ts-ignore */}
+//                         {channel && <UserProfile profile={state} />}
+//                     </aside>
+//                 </>
+//                 )
+//         }
+//         </Transition>
+//     )
+// }

@@ -3,7 +3,7 @@
     // background: lightgrey;
     width: 100vw;
     height: 100vh;
-    .container {
+    .main-container {
         display: flex;
         flex-direction: row;
         padding: 30px;
@@ -40,6 +40,53 @@
             margin: 10px 10px 10px 1px;
             padding: 10px;
             border-radius: 0px 10px 10px 0px;
+        }
+        .main-cards {
+            width: 60%;
+            height: 100%;
+            background: white;
+            margin: 10px 0px 10px 10px;
+            padding: 10px;
+            border-radius: 10px 0px 0px 10px;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            overflow: auto;
+            color: black;
+            position: relative;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+              width: 0px;
+            }
+    
+            &::-webkit-scrollbar-track {
+                width: 0px;
+            }
+    
+            &::-webkit-scrollbar-thumb {
+                width: 0px;
+            }
+        }
+        .card-detail {
+            width: 30%;
+            height: 100%;
+            background: white;
+            margin: 10px 10px 10px 1px;
+            padding: 35px 20px;
+            border-radius: 0px 10px 10px 0px;
+            overflow: auto;
+            scrollbar-width: none;
+            &::-webkit-scrollbar {
+              width: 0px;
+            }
+        
+            &::-webkit-scrollbar-track {
+                width: 0px;
+            }
+        
+            &::-webkit-scrollbar-thumb {
+                width: 0px;
+            }
         }
     }
 }

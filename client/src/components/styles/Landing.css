@@ -13,7 +13,8 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  color: #fff; }
+  color: #fff;
+  overflow: hidden; }
   .v-header .fullscreen-video-wrap {
     position: absolute;
     top: 0;

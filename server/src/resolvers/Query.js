@@ -73,6 +73,7 @@ const Query = {
                 }
             }
         }
+        
         return prisma.query.posts(opArgs, info)
     },
     post(parent, args, { prisma }, info) {
