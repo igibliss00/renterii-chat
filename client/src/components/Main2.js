@@ -27,7 +27,6 @@ const Main = () => {
         config: config.molasses
     })
     const { menu, channel, selectedCard } = !!state && state
-
     return(
         <div className="main">
             <div className="main-container">
@@ -88,16 +87,18 @@ const Main = () => {
                                     <section style={props} className="new-channel-portal">
                                         <NewChannelForm />
                                     </section>
-                                    {selectedCard && <section style={props} className="card-detail">
-                                        Hello detail
-                                    </section>}
                                 </>
                             )
                             : (menu === "Browse")
                             ? (props => 
-                                <section style={props} className="browse">
-                                    <Browse />
-                                </section>
+                                <>
+                                    <section style={props} className="browse">
+                                        <Browse />
+                                    </section>
+                                    {selectedCard && <section style={props} className="card-detail">
+                                        No communities at the moment
+                                    </section>}
+                                </>
                             )
                             : ""
                     }

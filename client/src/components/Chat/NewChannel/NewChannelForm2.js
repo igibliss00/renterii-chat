@@ -31,26 +31,28 @@ const Content = Keyframes.Trail({
 
 const items = [
   <Avatar src="https://semantic-ui.com/images/avatar2/large/elyse.png" />,
+  <h3 className="new-channel-form-title">Create Your Own Channel</h3>,
   <Input
     size="small"
     prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />}
-    placeholder="Username"
+    type="text"
+    placeholder="Channel Name"
   />,
   <Input
     size="small"
     prefix={<Icon type="lock" style={{ color: 'rgba(0,0,0,.25)' }} />}
-    type="password"
-    placeholder="Password"
+    type="text"
+    placeholder="Description"
   />,
   <Fragment>
-    <Checkbox size="small">Remember me</Checkbox>
+    <Checkbox size="small">Private</Checkbox>
     <a className="login-form-forgot" href="#" children="Forgot password" />
     <Button
       size="small"
       type="danger"
       htmlType="submit"
       className="login-form-button"
-      children="Log in"
+      children="Create"
     />
   </Fragment>,
 ]

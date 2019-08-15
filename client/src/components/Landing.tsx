@@ -4,7 +4,7 @@ import { useSpring, animated } from 'react-spring'
 import './styles/Landing.css'
 import Auth from './Auth/Auth'
 import Context from '../store/context'
-import Spinner from '../util/Spinner'
+import SpinnerWhite from '../util/SpinnerWhite'
 
 const config = { 
     mass: 5, 
@@ -25,7 +25,6 @@ const Landing: React.FunctionComponent = () => {
     const onClickHandler = () => {
         set(state => !state)
     }
-
     return(
         <div className="v-header container">
             <div className="fullscreen-video-wrap">
@@ -44,8 +43,7 @@ const Landing: React.FunctionComponent = () => {
                 </div>
             </figure>
             <animated.div className="auth" style={props}>
-                {state.authDelay && <Spinner />}
-                <Auth />
+                {state.authDeley ? <SpinnerWhite /> : <Auth />}
             </animated.div>
         </div>
     )

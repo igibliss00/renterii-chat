@@ -1,5 +1,4 @@
 import React, { useContext } from 'react'
-import ChatIcon from '@material-ui/icons/Chat'
 import ShoppingCart from '@material-ui/icons/ShoppingCart'
 import Settings from '@material-ui/icons/Settings'
 import ExitToApp from '@material-ui/icons/ExitToApp'
@@ -25,8 +24,8 @@ const Menu: React.FunctionComponent = () => {
     })
 
     const onClickHandler = (menu: any):void => {
-        const { name } = menu
-        dispatch({ type: SELECT_MENU, payload: name })
+        const { key } = menu
+        dispatch({ type: SELECT_MENU, payload: key })
     }
 
     return <ul className="chat-menu">
@@ -51,24 +50,24 @@ const menuArr = [
         icon:  <img src={require("../media/Renterii_logo_shape_r.png")} alt="renterii logo"/>
     },
     {
-        icon: <ChatIcon className="menu-icons" />,
-        name: "Chat"
-    },
-    {
         icon: <Treeview />,
-        name: "Chat"
+        name: "",
+        key: "Chat",
     },
     {
         icon: <ShoppingCart className="menu-icons" />,
-        name: "Shop"
+        name: "Shop",
+        key: "Shop",
     },
     {
         icon: <Settings className="menu-icons" />,
-        name: "Settings"
+        name: "Settings",
+        key: "Settings",
     },
     {
         icon: <ExitToApp className="menu-icons" />,
-        name: "Logout"
+        name: "Logout",
+        key: "Logout",
     },   
 ]
 

@@ -75,11 +75,22 @@
     height: 300px;
 }
 
+.error-height {
+    height: 360px;
+    transform: translateY(-50px);
+}
+
 @include mQ(600px){
     .form {
         label, .signin, input, .signupToggle {
             font-size: 10px;
         }
+    }
+}
+
+@include mQ(270px){
+    .form {
+        padding: 30px 15px;
     }
 }
   

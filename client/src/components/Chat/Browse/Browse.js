@@ -1,13 +1,16 @@
-import React, { useState, useRef } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { render } from 'react-dom'
 import { useTransition, useSpring, useChain, config } from 'react-spring'
 import { Container, Item } from './styles'
 import data from './data'
 
+import Context from '../../../store/context'
 import '../../styles/Browse.css'
+import { SELECT_CARD } from '../../../constants'
 
 export default function App() {
   const [open, set] = useState(false)
+  const { dispatch } = useContext(Context)
 
   const springRef = useRef()
   const { size, opacity, ...rest } = useSpring({
@@ -30,11 +33,23 @@ export default function App() {
   // This will orchestrate the two animations above, comment the last arg and it creates a sequence
   useChain(open ? [springRef, transRef] : [transRef, springRef], [0, open ? 0.1 : 0.6])
 
+  const onClickHandler = () => {
+    dispatch({ type: SELECT_CARD, payload: true })
+    set(open => !open)
+  }
   return (
     <>
-      <Container style={{ ...rest, width: size, height: size }} onClick={() => set(open => !open)}>
+      <Container 
+        style={{ ...rest, width: size, height: size }} 
+        onClick={onClickHandler}
+        >
         {transitions.map(({ item, key, props }) => (
-          <Item native key={key} style={{ ...props, background: item.css }} />
+          <Item 
+            key={key} 
+            style={{ ...props, background: item.css }}
+          >
+            <p>{item.name}</p>
+          </Item>
         ))}
       </Container>
     </>

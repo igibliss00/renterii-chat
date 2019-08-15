@@ -1,11 +1,35 @@
 .error {
   padding: 2rem;
   background: white;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   border: 1px solid rgba(0, 0, 0, 0.05);
-  border-left: 5px solid red; }
+  border-left: 5px solid red;
+  max-width: 100%; }
   .error p {
     margin: 0;
-    font-weight: 100; }
+    font-weight: 100;
+    font-size: 13px; }
   .error strong {
     margin-right: 1rem; }
+
+@media screen and (max-width: 770px) {
+  .error {
+    margin: 15px;
+    padding: 0; } }
+
+@media screen and (max-width: 470px) {
+  .error {
+    margin: 10px;
+    padding: 0; } }
+
+@media screen and (max-width: 330px) {
+  .error {
+    margin: 5px; } }
+
+@media screen and (max-width: 320px) {
+  .error p {
+    font-size: 10px; } }
+
+@media screen and (max-width: 270px) {
+  .error p {
+    line-height: 15px; } }

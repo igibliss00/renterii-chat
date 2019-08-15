@@ -9,6 +9,7 @@ import PinIcon from './PinIcon'
 import Context from '../../store/context'
 import { SELECT_PIN, SELECT_YOUR_PIN } from '../../constants'
 import SelectedPopup from './SelectedPopup'
+import '../styles/SingleMap.css'
 
 const SingleMap = props => {
   const { state, dispatch } = useContext(Context)

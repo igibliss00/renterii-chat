@@ -74,9 +74,30 @@
       @media screen and (max-width: 350px) {
         .chat-wrapper .chat .chat-bubble img {
           max-width: 200px; } }
+    .chat-wrapper .chat .left {
+      background: #ebebeb;
+      margin: 20px 40px 10px 0px;
+      padding: 20px; }
+      .chat-wrapper .chat .left:after {
+        content: '';
+        position: absolute;
+        border: 10px solid transparent;
+        border-bottom: 10px solid #ebebeb;
+        bottom: 0px;
+        left: -10px; }
     .chat-wrapper .chat .chat-right-align {
-      color: rgba(236, 116, 116, 0.959);
-      text-align: right; }
+      text-align: right;
+      background: #ff9393;
+      color: white;
+      padding: 20px;
+      margin: 20px 0px 10px 40px; }
+      .chat-wrapper .chat .chat-right-align:after {
+        content: '';
+        position: absolute;
+        border: 10px solid transparent;
+        border-bottom: 10px solid #ff9393;
+        bottom: 0px;
+        right: -10px; }
     .chat-wrapper .chat .chat-status {
       color: rgba(27, 27, 235, 0.904) !important;
       font-weight: bold; }

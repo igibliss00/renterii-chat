@@ -21,6 +21,16 @@ const Item = styled(animated.div)`
   background: white;
   border-radius: 5px;
   will-change: transform, opacity;
+  position: relative;
+  p {
+    position: absolute;
+    text-align: center;
+    color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-weight: bold;
+  }
 `
 
 export { Container, Item }

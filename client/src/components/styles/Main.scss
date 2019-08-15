@@ -1,3 +1,4 @@
+@import "variables.scss";
 @import "mixins.scss";
 
 .main {
@@ -12,8 +13,9 @@
             height: 100%;
             background: white;
             margin: 10px;
-            padding: 10px;
+            padding: 10px 50px 10px 0px;
             border-radius: 10px;
+            background: $red;
         }
         .chat-inbox {
             width: 25%;
@@ -100,38 +102,41 @@
             }
         }
         .new-channel-portal {
-            padding: 0;
-            width: 60%;
+            width: 85%;
             height: 100%;
             background: white;
             margin: 10px 0px 10px 10px;
-            border-radius: 20px 0px 0px 20px;
+            border-radius: 20px;
         }
         .browse {
-            margin: 10px;
+            margin: 10px 0px 10px 10px;
             padding: 0;
             overflow: hidden;
             user-select: none;
             background: white;
-            // padding: 20px;
             display: flex;
             align-items: center;
             justify-content: center;
-        
-            width: 85%;
+            width: 60%;
             height: 100%;
-            border-radius: 20px;
+            border-radius: 20px 0px 0px 20px;
         }
     }
 }
 
 @include mQ(930px){
     .main {
+        position: relative;
         .main-container {
             flex-direction: column;
             .menu {
+                position: fixed;
                 width: 100%;
                 height: 100px;
+                z-index: 10;
+                margin-left: 0px;
+                margin-top: -50px;
+                border-radius: 0px;
             }
             .chat-inbox {
                 width: 100%;

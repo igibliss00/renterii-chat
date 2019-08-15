@@ -8,6 +8,7 @@ import { SIGNUP_MUTATION, LOGIN_MUTATION } from '../../graphql/mutation'
 import { AUTH_TOKEN, AUTH_ID, AUTH_DELAY } from '../../constants';
 import GoogleAuth from './GoogleAuth'
 import SpinnerWhite from '../../util/SpinnerWhite'
+import ErrorMessage from '../../util/ErrorMessage'
 import Context from '../../store/context'
 
 const Auth: React.FunctionComponent = ({ history }: any) => {
@@ -17,6 +18,7 @@ const Auth: React.FunctionComponent = ({ history }: any) => {
     const [firstName, setFirstName] = useState<string>('')
     const [lastName, setLastName] = useState<string>('')
     const [loginStatus, setLoginStatus] = useState<boolean>(false)
+    const [error, setError] = useState<any>(null)
     const passwordError = password !== repassword ? "Password does not match!" : null
     const { dispatch } = useContext<any>(Context)
 
@@ -30,26 +32,23 @@ const Auth: React.FunctionComponent = ({ history }: any) => {
 
     const onSubmitHandler = async (authenticate: any, e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
+        dispatch({ type: AUTH_DELAY, payload: true })
         let authResults;
         try {
             authResults = await authenticate()
-            console.log("authResults", authResults)
-            if(!authResults.data.login.token) {
-                dispatch({ type: AUTH_DELAY, payload: true })
-               
-            }
             window.localStorage.setItem(AUTH_TOKEN, loginStatus ? authResults.data.createUser.token : authResults.data.login.token)
             window.localStorage.setItem(AUTH_ID, loginStatus ? authResults.data.createUser.user.id : authResults.data.login.user.id)
             // window.localStorage.setItem(PERMISSIONS, authResults.data.user.permissions)
             history.push('/main')
         } catch(err) {
-            throw new Error(err)
+            console.log(err)
+            setError(err)
         }
     }
 
     return (
         <form 
-            className={`form ${loginStatus && "form-height"}`}
+            className={`form ${loginStatus && "form-height"} ${error && "error-height"}`}
             onSubmit={(e: React.FormEvent<HTMLFormElement>) => onSubmitHandler(authenticate, e)}
         >
             <div>
@@ -74,8 +73,11 @@ const Auth: React.FunctionComponent = ({ history }: any) => {
                     />
                 </label>
             </div>
-            { !loginStatus && 
+            { !loginStatus &&
+                <>
+                <ErrorMessage error={error} /> 
                 <Link to="/requestreset" className="password-reset">Reset Your Password</Link>
+                </>
             }
             {loginStatus && 
                 <>

@@ -86,9 +86,34 @@
             }
         }
 
+        .left {
+            background: rgb(235, 235, 235);
+            margin: 20px 40px 10px 0px;
+            padding: 20px;
+            &:after {
+                content: '';
+                position: absolute;
+                border: 10px solid transparent;
+                border-bottom: 10px solid rgb(235, 235, 235);
+                bottom: 0px;
+                left: -10px;
+            }
+        }
+
         .chat-right-align {
-            color: rgba(236, 116, 116, 0.959);
             text-align: right;
+            background: rgb(255, 147, 147);
+            color: white;
+            padding: 20px;
+            margin: 20px 0px 10px 40px;
+            &:after {
+                content: '';
+                position: absolute;
+                border: 10px solid transparent;
+                border-bottom: 10px solid rgb(255, 147, 147);
+                bottom: 0px;
+                right: -10px;
+            }
         }
         
         .chat-status {

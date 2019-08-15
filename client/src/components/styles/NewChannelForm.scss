@@ -1,3 +1,5 @@
+@import "variables.scss";
+
 .sidebar {
     overflow: hidden;
     height: auto;
@@ -5,7 +7,7 @@
     background: white;
     padding: 20px;
     font-size: 15px;
-    margin: 50% auto;
+    margin: 20% auto;
   }
   
   .sidebar-toggle {
@@ -45,3 +47,9 @@
   .sidebar .ant-form-item-control {
     line-height: 29px;
   }
+
+  .new-channel-form-title {
+    color: $red;
+    text-align: center;
+  }
+

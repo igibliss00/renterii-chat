@@ -194,7 +194,6 @@ class SubChat extends PureComponent {
                             />
                         </div>
                     </div>
- 
                 </div>
                 {mapOpen && <ChatMapContainer channel={this.props.channel} />} 
                 <TypeIndicator 

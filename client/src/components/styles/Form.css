@@ -82,6 +82,16 @@
 .form-height {
   height: 300px; }
 
+.error-height {
+  height: 360px;
+  -webkit-transform: translateY(-50px);
+  -ms-transform: translateY(-50px);
+  transform: translateY(-50px); }
+
 @media screen and (max-width: 600px) {
   .form label, .form .signin, .form input, .form .signupToggle {
     font-size: 10px; } }
+
+@media screen and (max-width: 270px) {
+  .form {
+    padding: 30px 15px; } }

@@ -55,7 +55,7 @@ const Message = ({ messages, authId, chatterId, channel }) => {
         >
             {message => styles => (
                 <animated.div
-                    className={`chat-bubble ${message.user.id === authId && message.status ? "chat-right-align chat-status" : message.user.id === authId && !message.status ? "chat-right-align" : message.status ? "chat-status" : message.isTyping ? "chat-isTyping" : ""}`}
+                    className={`chat-bubble ${message.user.id === authId && message.status ? "chat-right-align chat-status" : message.user.id === authId && !message.status ? "chat-right-align" : message.status ? "chat-status" : message.isTyping ? "chat-isTyping" : "left"}`}
                     style={styles}
                 > 
                     <p>{message.text}</p>
