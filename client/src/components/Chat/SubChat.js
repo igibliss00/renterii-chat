@@ -28,7 +28,6 @@ class SubChat extends PureComponent {
     }
 
     componentDidMount() {
-        document.title = 'renterii - chat'
         this.scrollToBottom()
     }
 
@@ -180,7 +179,7 @@ class SubChat extends PureComponent {
                                 onChange={(e) => this.uploadFile(e, createMessage)}
                             />
                         </label>
-                        <div className="location-share">
+                        <div className="location-share-button">
                             <Location 
                                 className={mapOpen ? "location-on" : ""}
                                 onClick={() => this.modalHandler(modalToggle, deleteLocation)} 
@@ -195,7 +194,6 @@ class SubChat extends PureComponent {
                         </div>
                     </div>
                 </div>
-                {mapOpen && <ChatMapContainer channel={this.props.channel} />} 
                 <TypeIndicator 
                     keycode={this.state.keycode} 
                     myUsername={myUsername && myUsername[0].firstName}

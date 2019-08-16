@@ -32,7 +32,7 @@ const ChatMap = ({ data, channel, subscribeToNewMessages }) => {
 
     // map size
     const mobileSize = useMediaQuery("(max-width: 650px)")
-    const width = useMediaQuery("(max-width: 520px)") ? "100vw" : "500px"
+    const width = useMediaQuery("(max-width: 520px)") ? "100vw" : "100%"
 
     // toggle query for isShared
     const { data: locationShare, error, loading } = useQuery(LOCAL_LOCATION_SHARE_STATE_QUERY)
@@ -147,6 +147,7 @@ const ChatMap = ({ data, channel, subscribeToNewMessages }) => {
         <ReactMapGL
             {...viewportChange}
             width={width}
+            height={300}
             doubleClickZoom={true}
             zoom={viewportChange.zoom ? viewportChange.zoom : 11}
             transitionDuration={100}

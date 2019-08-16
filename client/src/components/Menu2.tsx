@@ -47,7 +47,7 @@ const Menu: React.FunctionComponent = () => {
 
 const menuArr = [
     {
-        icon:  <img src={require("../media/Renterii_logo_shape_r.png")} alt="renterii logo"/>
+        icon: <img src={require("../media/Renterii_logo_w.png")} alt="renterii logo"/>
     },
     {
         icon: <Treeview />,
@@ -71,4 +71,4 @@ const menuArr = [
     },   
 ]
 
-export default Menu
+export default React.memo(Menu)

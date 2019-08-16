@@ -8,7 +8,7 @@ const Frame = styled('div')`
   white-space: nowrap;
   overflow-x: hidden;
   vertical-align: middle;
-  color: rgba(128, 128, 128, 0.753);
+  color: white;
   font-weight: bold;
   fill: white;
 `

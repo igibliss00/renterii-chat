@@ -6,9 +6,8 @@
     flex-direction: column;
     padding-left: 5px;
     text-align: left;
-    color: rgba(128, 128, 128, 0.753);
+    color: white;
     font-weight: bold;
-    // z-index: 10;
     .menu-icons {
         transform: translateY(8px);
         padding-right: 5px;
@@ -53,6 +52,12 @@
         justify-content: space-around;
         height: 30px;
         li {
+            .logo {
+                background-image: url(../../media/Renterii_logo_w.png);
+                z-index: 100;
+                width: 100px;
+                height: 100px;
+            }
             img {
                 width: 80px;
             }

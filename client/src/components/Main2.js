@@ -1,6 +1,7 @@
 import React, { useContext } from 'react'
 import { useSpring, animated, config } from 'react-spring'
 import {Transition} from 'react-spring/renderprops'
+import { useQuery } from 'react-apollo-hooks'
 
 import './styles/Main.css'
 import Menu from './Menu2'
@@ -12,9 +13,16 @@ import Card from './Posts/Card'
 import CardDetail from './Posts/CardDetail'
 import NewChannelForm from './Chat/NewChannel/NewChannelForm2'
 import Browse from './Chat/Browse/Browse'
+import { LOCAL_LOCATION_SHARE_STATE_QUERY } from '../graphql/query'
+import ChatMapContainer from './Chat/ChatMapContainer'
 
 const Main = () => {
     const { state } = useContext(Context)
+
+    // toggle query for isShared
+    const { data: { locationShare }, error } = useQuery(LOCAL_LOCATION_SHARE_STATE_QUERY)
+
+    // transition animation for the menu
     const props = useSpring({
         from: {
             transform: 'translateY(-100px)',
@@ -26,6 +34,8 @@ const Main = () => {
         },
         config: config.molasses
     })
+    console.log("locationShare", locationShare)
+    if(error) return <div>Location Share Error</div>
     const { menu, channel, selectedCard } = !!state && state
     return(
         <div className="main">
@@ -58,16 +68,21 @@ const Main = () => {
                                     <section style={props} className="chat-inbox">
                                         <Inbox />
                                     </section>
-                                    <section style={props} className="main-chat">
+                                    {channel && <section style={props} className="main-chat">
                                     {/* 
                                     // @ts-ignore */}
-                                        {channel && <Chat chatInfo={state} />}
-                                    </section>
-                                    <aside style={props} className="user-profile">
+                                        <Chat chatInfo={state} />
+                                    </section>}
+                                    {channel && !locationShare && <aside style={props} className="user-profile">
                                     {/* 
                                     // @ts-ignore */}
-                                        {channel && <UserProfile profile={state} />}
-                                    </aside>
+                                        <UserProfile profile={state} />
+                                    </aside>}
+                                    {locationShare && <aside style={props} className="user-location">
+                                    {/* 
+                                    // @ts-ignore */}
+                                        <ChatMapContainer channel={channel}  />
+                                    </aside>}
                                 </>
                             )
                             : (menu === "Shop")

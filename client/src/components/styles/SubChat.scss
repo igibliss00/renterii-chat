@@ -151,9 +151,10 @@
         }
         .chat-button {
             width: 100%;
-            height: 30px;
+            height: 35px;
             background: $red;
             color: white;
+            padding: 10px;
             border: none;
             border-radius: 10px;
             -webkit-transition-duration: 0.4s; /* Safari */
@@ -162,7 +163,7 @@
             p {
                 font-size: 15px;
                 font-weight: bold;
-                line-height: 0px;
+                line-height: 15px;
             }
             &:hover {
                 background: rgb(245, 45, 45);
@@ -194,11 +195,11 @@
                 color: grey;
                 transform: translateY(10px);
             }
-            .location-share {
+            .location-share-button {
                 margin: 10px;
                 cursor: pointer;
                 &:hover {
-                    color: $red;
+                    color: blue;
                 }
                 .location-on {
                     color: blue;

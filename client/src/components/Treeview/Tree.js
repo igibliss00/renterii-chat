@@ -25,7 +25,7 @@ const Tree = memo(({ children, name, style, defaultOpen = false }) => {
     }
     return (
         <Frame>
-        <Icon style={{ ...toggle, fill: "rgba(128, 128, 128, 0.753)", opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} />
+        <Icon style={{ ...toggle, fill: "white", opacity: children ? 1 : 0.3 }} onClick={() => setOpen(!isOpen)} />
         <Title 
             style={style} 
             onClick={e => onClickHandler(e, name)}
